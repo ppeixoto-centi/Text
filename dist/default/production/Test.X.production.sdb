@@ -1,0 +1,959 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F27K42 ]
+[d frameptr 16353 ]
+"139 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[e E15637 . `uc
+ADC_CHANNEL_VSS 59
+ADC_CHANNEL_TEMP 60
+ADC_CHANNEL_DAC1 61
+ADC_CHANNEL_FVR_BUFFER1 62
+ADC_CHANNEL_FVR_BUFFER2 63
+ADC_CHANNEL_ANA0 0
+]
+"164
+[e E15645 . `uc
+ADC_BASIC 0
+ADC_SERIES_ACCUMULATE 1
+ADC_SERIES_AVERAGE 2
+ADC_BURST_AVERAGE 3
+ADC_LOW_PASS_FILTER 4
+]
+"169
+[e E15659 . `uc
+ADC_NEVER_INTERRUPT 0
+ADC_BELOW_LOWER_THRESHOLD 1
+ADC_ABOVE_LOWER_THRESHOLD 2
+ADC_INSIDE_LOWER_AND_UPPER_THRESHOLD 3
+ADC_OUTSIDE_LOWER_AND_UPPER_THRESHOLD 4
+ADC_BELOW_UPPER_THRESHOLD 5
+ADC_ABOVE_UPPER_THRESHOLD 6
+ADC_ALWAYS_INTERRUPT 7
+]
+"308
+[e E15700 . `uc
+ADC_NOT_CONVERTING 0
+ADC_1ST_PRECHARGE 1
+ADC_1ST_ACQUISITION 2
+ADC_1ST_CONVERSION 3
+ADC_SUSPENDED_BETWEEN_1ST_AND_2ND_SAMPLE 4
+ADC_2ND_PRECHARGE 5
+ADC_2ND_ACQUISITION 6
+ADC_2ND_CONVERSION 7
+]
+"313
+[e E15669 . `uc
+ADC_TRIGGER_SOURCE_DISABLED 0
+ADC_TRIGGER_SOURCE_ADACTPPS 1
+ADC_TRIGGER_SOURCE_TMR0 2
+ADC_TRIGGER_SOURCE_TMR1 3
+ADC_TRIGGER_SOURCE_TMR2 4
+ADC_TRIGGER_SOURCE_TMR3 5
+ADC_TRIGGER_SOURCE_TMR4 6
+ADC_TRIGGER_SOURCE_TMR5 7
+ADC_TRIGGER_SOURCE_TMR6 8
+ADC_TRIGGER_SOURCE_SMT1 9
+ADC_TRIGGER_SOURCE_CCP1 10
+ADC_TRIGGER_SOURCE_CCP2 11
+ADC_TRIGGER_SOURCE_CCP3 12
+ADC_TRIGGER_SOURCE_CCP4 13
+ADC_TRIGGER_SOURCE_PWM5 14
+ADC_TRIGGER_SOURCE_PWM6 15
+ADC_TRIGGER_SOURCE_PWM7 16
+ADC_TRIGGER_SOURCE_PWM8 17
+ADC_TRIGGER_SOURCE_NCO1 18
+ADC_TRIGGER_SOURCE_CMP1 19
+ADC_TRIGGER_SOURCE_CMP2 20
+ADC_TRIGGER_SOURCE_LOGICAL_OR_OF_ALL_IOC_FLAGS 21
+ADC_TRIGGER_SOURCE_CLC1 22
+ADC_TRIGGER_SOURCE_CLC2 23
+ADC_TRIGGER_SOURCE_CLC3 24
+ADC_TRIGGER_SOURCE_CLC4 25
+ADC_TRIGGER_SOURCE_ADERRH 26
+ADC_TRIGGER_SOURCE_ADRESH 27
+ADC_TRIGGER_SOURCE_ADPCH 29
+]
+"318
+[e E15652 . `uc
+ADC_FIRST_DERIVATIVE_OF_SINGLE_MEASUREMENT 0
+ADC_ACTUAL_RESULT_VS_SETPOINT 1
+ADC_ACTUAL_RESULT_VS_FILTERED_VALUE 2
+ADC_FIRST_DERIVATIVE_OF_FILTERED_VALUE 4
+ADC_FILTERED_VALUE_VS_SETPOINT 5
+]
+"50 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[e E15654 . `uc
+ADC_CHANNEL_VSS 59
+ADC_CHANNEL_TEMP 60
+ADC_CHANNEL_DAC1 61
+ADC_CHANNEL_FVR_BUFFER1 62
+ADC_CHANNEL_FVR_BUFFER2 63
+ADC_CHANNEL_ANA0 0
+]
+"44
+[v _Abs_LayerInit Abs_LayerInit `(v  1 e 1 0 ]
+"58
+[v _Abs_Loop Abs_Loop `(v  1 e 1 0 ]
+"73
+[v _ExtISR_Handler ExtISR_Handler `(v  1 e 1 0 ]
+"77
+[v _TIM0_EllapsedTimeCallback TIM0_EllapsedTimeCallback `(v  1 e 1 0 ]
+"81
+[v _ADC_CompleteConversionCallback ADC_CompleteConversionCallback `(v  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"43 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"47 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"139
+[v _ADC_ChannelSelect ADC_ChannelSelect `(v  1 e 1 0 ]
+"144
+[v _ADC_ConversionStart ADC_ConversionStart `(v  1 e 1 0 ]
+"159
+[v _ADC_ConversionResultGet ADC_ConversionResultGet `(s  1 e 2 0 ]
+"378
+[v _ADC_ConversionDoneCallbackRegister ADC_ConversionDoneCallbackRegister `(v  1 e 1 0 ]
+"388
+[v _ADC_ConversionDoneInterruptEnable ADC_ConversionDoneInterruptEnable `(v  1 e 1 0 ]
+"408
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+"422
+[v _ADC_ThresholdISR ADC_ThresholdISR `(v  1 e 1 0 ]
+"39 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+"42 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"80
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"114
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+"123
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"127
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"140
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"149
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"153
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"166
+[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
+"175
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+"179
+[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
+"39 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"126
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"138
+[v _SW1_ISR SW1_ISR `(v  1 e 1 0 ]
+"153
+[v _SW1_SetInterruptHandler SW1_SetInterruptHandler `(v  1 e 1 0 ]
+"160
+[v _SW1_DefaultInterruptHandler SW1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"40 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"45 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"101
+[v _TMR0_PeriodSet TMR0_PeriodSet `(v  1 e 1 0 ]
+"106
+[v _TMR0_PeriodGet TMR0_PeriodGet `(uc  1 e 1 0 ]
+"126
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"135
+[v _TMR0_PeriodMatchCallbackRegister TMR0_PeriodMatchCallbackRegister `(v  1 e 1 0 ]
+"140
+[v _TMR0_DefaultCallback TMR0_DefaultCallback `(v  1 s 1 TMR0_DefaultCallback ]
+"26 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[v _adc_value adc_value `s  1 e 2 0 ]
+"28
+[v _abs_button abs_button `uc  1 s 1 abs_button ]
+"29
+[v _period_elapsed period_elapsed `uc  1 e 1 0 ]
+[s S148 . 1 `uc 1 SWIE 1 0 :1:0 
+`uc 1 HLVDIE 1 0 :1:1 
+`uc 1 OSFIE 1 0 :1:2 
+`uc 1 CSWIE 1 0 :1:3 
+`uc 1 NVMIE 1 0 :1:4 
+`uc 1 SCANIE 1 0 :1:5 
+`uc 1 CRCIE 1 0 :1:6 
+`uc 1 IOCIE 1 0 :1:7 
+]
+"3289 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
+[u S157 . 1 `S148 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES157  1 e 1 @14736 ]
+[s S194 . 1 `uc 1 INT0IE 1 0 :1:0 
+`uc 1 ZCDIE 1 0 :1:1 
+`uc 1 ADIE 1 0 :1:2 
+`uc 1 ADTIE 1 0 :1:3 
+`uc 1 C1IE 1 0 :1:4 
+`uc 1 SMT1IE 1 0 :1:5 
+`uc 1 SMT1PRAIE 1 0 :1:6 
+`uc 1 SMT1PWAIE 1 0 :1:7 
+]
+"3351
+[u S203 . 1 `S194 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES203  1 e 1 @14737 ]
+[s S223 . 1 `uc 1 I2C1TXIE 1 0 :1:0 
+`uc 1 I2C1IE 1 0 :1:1 
+`uc 1 I2C1EIE 1 0 :1:2 
+`uc 1 U1RXIE 1 0 :1:3 
+`uc 1 U1TXIE 1 0 :1:4 
+`uc 1 U1EIE 1 0 :1:5 
+`uc 1 U1IE 1 0 :1:6 
+`uc 1 TMR0IE 1 0 :1:7 
+]
+"3475
+[u S232 . 1 `S223 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES232  1 e 1 @14739 ]
+[s S169 . 1 `uc 1 SWIF 1 0 :1:0 
+`uc 1 HLVDIF 1 0 :1:1 
+`uc 1 OSFIF 1 0 :1:2 
+`uc 1 CSWIF 1 0 :1:3 
+`uc 1 NVMIF 1 0 :1:4 
+`uc 1 SCANIF 1 0 :1:5 
+`uc 1 CRCIF 1 0 :1:6 
+`uc 1 IOCIF 1 0 :1:7 
+]
+"3854
+[u S178 . 1 `S169 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES178  1 e 1 @14752 ]
+[s S59 . 1 `uc 1 INT0IF 1 0 :1:0 
+`uc 1 ZCDIF 1 0 :1:1 
+`uc 1 ADIF 1 0 :1:2 
+`uc 1 ADTIF 1 0 :1:3 
+`uc 1 C1IF 1 0 :1:4 
+`uc 1 SMT1IF 1 0 :1:5 
+`uc 1 SMT1PRAIF 1 0 :1:6 
+`uc 1 SMT1PWAIF 1 0 :1:7 
+]
+"3916
+[u S68 . 1 `S59 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES68  1 e 1 @14753 ]
+[s S244 . 1 `uc 1 I2C1TXIF 1 0 :1:0 
+`uc 1 I2C1IF 1 0 :1:1 
+`uc 1 I2C1EIF 1 0 :1:2 
+`uc 1 U1RXIF 1 0 :1:3 
+`uc 1 U1TXIF 1 0 :1:4 
+`uc 1 U1EIF 1 0 :1:5 
+`uc 1 U1IF 1 0 :1:6 
+`uc 1 TMR0IF 1 0 :1:7 
+]
+"4040
+[u S253 . 1 `S244 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES253  1 e 1 @14755 ]
+[s S90 . 1 `uc 1 INT1IF 1 0 :1:0 
+`uc 1 C2IF 1 0 :1:1 
+`uc 1 DMA2SCNTIF 1 0 :1:2 
+`uc 1 DMA2DCNTIF 1 0 :1:3 
+`uc 1 DMA2ORIF 1 0 :1:4 
+`uc 1 DMA2AIF 1 0 :1:5 
+`uc 1 I2C2RXIF 1 0 :1:6 
+`uc 1 I2C2TXIF 1 0 :1:7 
+]
+"4159
+[u S99 . 1 `S90 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES99  1 e 1 @14757 ]
+[s S121 . 1 `uc 1 TMR4IF 1 0 :1:0 
+`uc 1 CCP2IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 CWG2IF 1 0 :1:3 
+`uc 1 CLC2IF 1 0 :1:4 
+`uc 1 INT2IF 1 0 :1:5 
+]
+"4281
+[u S128 . 1 `S121 1 . 1 0 ]
+[v _PIR7bits PIR7bits `VES128  1 e 1 @14759 ]
+"4900
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @14809 ]
+"5040
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @14811 ]
+"5192
+[v _OSCEN OSCEN `VEuc  1 e 1 @14813 ]
+"5243
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @14814 ]
+"5347
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @14815 ]
+"6459
+[v _RA5PPS RA5PPS `VEuc  1 e 1 @14853 ]
+"7409
+[v _ANSELA ANSELA `VEuc  1 e 1 @14912 ]
+"7471
+[v _WPUA WPUA `VEuc  1 e 1 @14913 ]
+"7533
+[v _ODCONA ODCONA `VEuc  1 e 1 @14914 ]
+"7595
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @14915 ]
+"7657
+[v _INLVLA INLVLA `VEuc  1 e 1 @14916 ]
+"7719
+[v _IOCAP IOCAP `VEuc  1 e 1 @14917 ]
+"7781
+[v _IOCAN IOCAN `VEuc  1 e 1 @14918 ]
+"7843
+[v _IOCAF IOCAF `VEuc  1 e 1 @14919 ]
+"7905
+[v _ANSELB ANSELB `VEuc  1 e 1 @14928 ]
+"7967
+[v _WPUB WPUB `VEuc  1 e 1 @14929 ]
+"8029
+[v _ODCONB ODCONB `VEuc  1 e 1 @14930 ]
+"8091
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @14931 ]
+"8153
+[v _INLVLB INLVLB `VEuc  1 e 1 @14932 ]
+"8215
+[v _IOCBP IOCBP `VEuc  1 e 1 @14933 ]
+"8277
+[v _IOCBN IOCBN `VEuc  1 e 1 @14934 ]
+"8339
+[v _IOCBF IOCBF `VEuc  1 e 1 @14935 ]
+[s S500 . 1 `uc 1 IOCBF0 1 0 :1:0 
+`uc 1 IOCBF1 1 0 :1:1 
+`uc 1 IOCBF2 1 0 :1:2 
+`uc 1 IOCBF3 1 0 :1:3 
+`uc 1 IOCBF4 1 0 :1:4 
+`uc 1 IOCBF5 1 0 :1:5 
+`uc 1 IOCBF6 1 0 :1:6 
+`uc 1 IOCBF7 1 0 :1:7 
+]
+"8356
+[u S509 . 1 `S500 1 . 1 0 ]
+[v _IOCBFbits IOCBFbits `VES509  1 e 1 @14935 ]
+"8401
+[v _RB1I2C RB1I2C `VEuc  1 e 1 @14938 ]
+"8509
+[v _RB2I2C RB2I2C `VEuc  1 e 1 @14939 ]
+"8617
+[v _ANSELC ANSELC `VEuc  1 e 1 @14944 ]
+"8679
+[v _WPUC WPUC `VEuc  1 e 1 @14945 ]
+"8741
+[v _ODCONC ODCONC `VEuc  1 e 1 @14946 ]
+"8803
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @14947 ]
+"8865
+[v _INLVLC INLVLC `VEuc  1 e 1 @14948 ]
+"8927
+[v _IOCCP IOCCP `VEuc  1 e 1 @14949 ]
+"8989
+[v _IOCCN IOCCN `VEuc  1 e 1 @14950 ]
+"9051
+[v _IOCCF IOCCF `VEuc  1 e 1 @14951 ]
+"9113
+[v _RC3I2C RC3I2C `VEuc  1 e 1 @14954 ]
+"9221
+[v _RC4I2C RC4I2C `VEuc  1 e 1 @14955 ]
+"9329
+[v _WPUE WPUE `VEuc  1 e 1 @14977 ]
+"9350
+[v _INLVLE INLVLE `VEuc  1 e 1 @14980 ]
+"9371
+[v _IOCEP IOCEP `VEuc  1 e 1 @14981 ]
+"9392
+[v _IOCEN IOCEN `VEuc  1 e 1 @14982 ]
+"9413
+[v _IOCEF IOCEF `VEuc  1 e 1 @14983 ]
+"26693
+[v _ADCP ADCP `VEuc  1 e 1 @16087 ]
+[s S945 . 1 `uc 1 CPRDY 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 ON 1 0 :1:7 
+]
+"26714
+[s S949 . 1 `uc 1 ADCPRDY 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 CPON 1 0 :1:7 
+]
+[s S953 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ADCPON 1 0 :1:7 
+]
+[u S956 . 1 `S945 1 . 1 0 `S949 1 . 1 0 `S953 1 . 1 0 ]
+[v _ADCPbits ADCPbits `VES956  1 e 1 @16087 ]
+"26751
+[v _ADLTHL ADLTHL `VEuc  1 e 1 @16094 ]
+"26879
+[v _ADLTHH ADLTHH `VEuc  1 e 1 @16095 ]
+"27014
+[v _ADUTHL ADUTHL `VEuc  1 e 1 @16096 ]
+"27142
+[v _ADUTHH ADUTHH `VEuc  1 e 1 @16097 ]
+"27277
+[v _ADERRL ADERRL `VEuc  1 e 1 @16098 ]
+"27405
+[v _ADERRH ADERRH `VEuc  1 e 1 @16099 ]
+"27540
+[v _ADSTPTL ADSTPTL `VEuc  1 e 1 @16100 ]
+"27668
+[v _ADSTPTH ADSTPTH `VEuc  1 e 1 @16101 ]
+"27803
+[v _ADFLTRL ADFLTRL `VEuc  1 e 1 @16102 ]
+"27931
+[v _ADFLTRH ADFLTRH `VEuc  1 e 1 @16103 ]
+"28068
+[v _ADACCL ADACCL `VEuc  1 e 1 @16104 ]
+"28196
+[v _ADACCH ADACCH `VEuc  1 e 1 @16105 ]
+"28324
+[v _ADACCU ADACCU `VEuc  1 e 1 @16106 ]
+"28452
+[v _ADCNT ADCNT `VEuc  1 e 1 @16107 ]
+"28580
+[v _ADRPT ADRPT `VEuc  1 e 1 @16108 ]
+"28715
+[v _ADPREVL ADPREVL `VEuc  1 e 1 @16109 ]
+"28843
+[v _ADPREVH ADPREVH `VEuc  1 e 1 @16110 ]
+"28978
+[v _ADRESL ADRESL `VEuc  1 e 1 @16111 ]
+"29106
+[v _ADRESH ADRESH `VEuc  1 e 1 @16112 ]
+"29226
+[v _ADPCH ADPCH `VEuc  1 e 1 @16113 ]
+"29337
+[v _ADACQL ADACQL `VEuc  1 e 1 @16115 ]
+"29465
+[v _ADACQH ADACQH `VEuc  1 e 1 @16116 ]
+"29557
+[v _ADCAP ADCAP `VEuc  1 e 1 @16117 ]
+"29656
+[v _ADPREL ADPREL `VEuc  1 e 1 @16118 ]
+"29784
+[v _ADPREH ADPREH `VEuc  1 e 1 @16119 ]
+"29876
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @16120 ]
+[s S546 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM 1 0 :2:2 
+`uc 1 CS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CONT 1 0 :1:6 
+`uc 1 ON 1 0 :1:7 
+]
+"29914
+[s S554 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+[s S562 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM0 1 0 :1:2 
+]
+[s S566 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+]
+[s S568 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+]
+[u S572 . 1 `S546 1 . 1 0 `S554 1 . 1 0 `S562 1 . 1 0 `S566 1 . 1 0 `S568 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES572  1 e 1 @16120 ]
+"29994
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @16121 ]
+[s S872 . 1 `uc 1 DSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 GPOL 1 0 :1:5 
+`uc 1 IPEN 1 0 :1:6 
+`uc 1 PPOL 1 0 :1:7 
+]
+"30015
+[s S878 . 1 `uc 1 ADDSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 ADGPOL 1 0 :1:5 
+`uc 1 ADIPEN 1 0 :1:6 
+`uc 1 ADPPOL 1 0 :1:7 
+]
+[u S884 . 1 `S872 1 . 1 0 `S878 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES884  1 e 1 @16121 ]
+"30060
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @16122 ]
+[s S669 . 1 `uc 1 MODE 1 0 :3:0 
+`uc 1 ACLR 1 0 :1:3 
+`uc 1 CRS 1 0 :3:4 
+`uc 1 PSIS 1 0 :1:7 
+]
+"30108
+[s S674 . 1 `uc 1 ADMD0 1 0 :1:0 
+`uc 1 ADMD1 1 0 :1:1 
+`uc 1 ADMD2 1 0 :1:2 
+`uc 1 ADACLR 1 0 :1:3 
+`uc 1 ADCRS0 1 0 :1:4 
+`uc 1 ADCRS1 1 0 :1:5 
+`uc 1 ADCRS2 1 0 :1:6 
+`uc 1 ADPSIS 1 0 :1:7 
+]
+[s S683 . 1 `uc 1 ADMD 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCRS 1 0 :3:4 
+]
+[s S687 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CRS0 1 0 :1:4 
+`uc 1 CRS1 1 0 :1:5 
+`uc 1 CRS2 1 0 :1:6 
+]
+[s S695 . 1 `uc 1 MD 1 0 :3:0 
+]
+[s S697 . 1 `uc 1 MD0 1 0 :1:0 
+`uc 1 MD1 1 0 :1:1 
+`uc 1 MD2 1 0 :1:2 
+]
+[s S701 . 1 `uc 1 ADMODE 1 0 :3:0 
+]
+[u S703 . 1 `S669 1 . 1 0 `S674 1 . 1 0 `S683 1 . 1 0 `S687 1 . 1 0 `S695 1 . 1 0 `S697 1 . 1 0 `S701 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES703  1 e 1 @16122 ]
+"30238
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @16123 ]
+[s S755 . 1 `uc 1 TMD 1 0 :3:0 
+`uc 1 SOI 1 0 :1:3 
+`uc 1 CALC 1 0 :3:4 
+]
+"30273
+[s S759 . 1 `uc 1 ADTMD0 1 0 :1:0 
+`uc 1 ADTMD1 1 0 :1:1 
+`uc 1 ADTMD2 1 0 :1:2 
+`uc 1 ADSOI 1 0 :1:3 
+`uc 1 ADCALC0 1 0 :1:4 
+`uc 1 ADCALC1 1 0 :1:5 
+`uc 1 ADCALC2 1 0 :1:6 
+]
+[s S767 . 1 `uc 1 ADTMD 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCALC 1 0 :3:4 
+]
+[s S771 . 1 `uc 1 TMD0 1 0 :1:0 
+`uc 1 TMD1 1 0 :1:1 
+`uc 1 TMD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CALC0 1 0 :1:4 
+`uc 1 CALC1 1 0 :1:5 
+`uc 1 CALC2 1 0 :1:6 
+]
+[u S779 . 1 `S755 1 . 1 0 `S759 1 . 1 0 `S767 1 . 1 0 `S771 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES779  1 e 1 @16123 ]
+"30368
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @16124 ]
+[s S812 . 1 `uc 1 STAT 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 MATH 1 0 :1:4 
+`uc 1 LTHR 1 0 :1:5 
+`uc 1 UTHR 1 0 :1:6 
+`uc 1 OV 1 0 :1:7 
+]
+"30403
+[s S819 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+`uc 1 ADSTAT1 1 0 :1:1 
+`uc 1 ADSTAT2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADMATH 1 0 :1:4 
+`uc 1 ADLTHR 1 0 :1:5 
+`uc 1 ADUTHR 1 0 :1:6 
+`uc 1 ADAOV 1 0 :1:7 
+]
+[s S828 . 1 `uc 1 ADSTAT 1 0 :3:0 
+`uc 1 . 1 0 :4:3 
+`uc 1 ADOV 1 0 :1:7 
+]
+[s S832 . 1 `uc 1 STAT0 1 0 :1:0 
+`uc 1 STAT1 1 0 :1:1 
+`uc 1 STAT2 1 0 :1:2 
+]
+[u S836 . 1 `S812 1 . 1 0 `S819 1 . 1 0 `S828 1 . 1 0 `S832 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES836  1 e 1 @16124 ]
+"30493
+[v _ADREF ADREF `VEuc  1 e 1 @16125 ]
+"30575
+[v _ADACT ADACT `VEuc  1 e 1 @16126 ]
+"30667
+[v _ADCLK ADCLK `VEuc  1 e 1 @16127 ]
+"44054
+[v _TMR0L TMR0L `VEuc  1 e 1 @16310 ]
+"44192
+[v _TMR0H TMR0H `VEuc  1 e 1 @16311 ]
+"44446
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @16312 ]
+[s S1303 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 MD16 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"44480
+[s S1309 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+`uc 1 T0MD16 1 0 :1:4 
+`uc 1 T0OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T0EN 1 0 :1:7 
+]
+"44480
+[s S1315 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 T016BIT 1 0 :1:4 
+]
+"44480
+[s S1321 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+`uc 1 T0OUTPS1 1 0 :1:1 
+`uc 1 T0OUTPS2 1 0 :1:2 
+`uc 1 T0OUTPS3 1 0 :1:3 
+]
+"44480
+[u S1326 . 1 `S1303 1 . 1 0 `S1309 1 . 1 0 `S1315 1 . 1 0 `S1321 1 . 1 0 ]
+"44480
+"44480
+[v _T0CON0bits T0CON0bits `VES1326  1 e 1 @16312 ]
+"44570
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @16313 ]
+"44712
+[v _LATA LATA `VEuc  1 e 1 @16314 ]
+[s S1160 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"44739
+[s S1169 . 1 `uc 1 LA0 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+`uc 1 LA2 1 0 :1:2 
+`uc 1 LA3 1 0 :1:3 
+`uc 1 LA4 1 0 :1:4 
+`uc 1 LA5 1 0 :1:5 
+`uc 1 LA6 1 0 :1:6 
+`uc 1 LA7 1 0 :1:7 
+]
+"44739
+[u S1178 . 1 `S1160 1 . 1 0 `S1169 1 . 1 0 ]
+"44739
+"44739
+[v _LATAbits LATAbits `VES1178  1 e 1 @16314 ]
+"44824
+[v _LATB LATB `VEuc  1 e 1 @16315 ]
+"44936
+[v _LATC LATC `VEuc  1 e 1 @16316 ]
+"45048
+[v _TRISA TRISA `VEuc  1 e 1 @16322 ]
+"45110
+[v _TRISB TRISB `VEuc  1 e 1 @16323 ]
+"45172
+[v _TRISC TRISC `VEuc  1 e 1 @16324 ]
+[s S1210 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"45313
+[u S1219 . 1 `S1210 1 . 1 0 ]
+"45313
+"45313
+[v _PORTBbits PORTBbits `VES1219  1 e 1 @16331 ]
+[s S1139 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"45375
+[u S1148 . 1 `S1139 1 . 1 0 ]
+"45375
+"45375
+[v _PORTCbits PORTCbits `VES1148  1 e 1 @16332 ]
+[s S33 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"45461
+[s S41 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 GIEH 1 0 :1:7 
+]
+"45461
+[u S44 . 1 `S33 1 . 1 0 `S41 1 . 1 0 ]
+"45461
+"45461
+[v _INTCON0bits INTCON0bits `VES44  1 e 1 @16338 ]
+"43 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_ConversionDoneCallback ADC_ConversionDoneCallback `*.38(v  1 s 3 ADC_ConversionDoneCallback ]
+"44
+[v _ADC_ThresholdCallback ADC_ThresholdCallback `*.38(v  1 s 3 ADC_ThresholdCallback ]
+"45
+[v _adc_busy_status adc_busy_status `a  1 s 1 adc_busy_status ]
+"38 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/interrupt.c
+[v _INT0_InterruptHandler INT0_InterruptHandler `*.38(v  1 e 3 0 ]
+"39
+[v _INT1_InterruptHandler INT1_InterruptHandler `*.38(v  1 e 3 0 ]
+"40
+[v _INT2_InterruptHandler INT2_InterruptHandler `*.38(v  1 e 3 0 ]
+"37 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/pins.c
+[v _SW1_InterruptHandler SW1_InterruptHandler `*.38(v  1 e 3 0 ]
+"38 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_PeriodMatchCallback TMR0_PeriodMatchCallback `*.38(v  1 s 3 TMR0_PeriodMatchCallback ]
+"43 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"62
+} 0
+"40 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"47
+} 0
+"45 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"39 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"124
+} 0
+"42 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"175
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 6 ]
+"177
+} 0
+"149
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 6 ]
+"151
+} 0
+"123
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 6 ]
+"125
+} 0
+"39 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+{
+"55
+} 0
+"58 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[v _Abs_Loop Abs_Loop `(v  1 e 1 0 ]
+{
+"71
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 12 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 11 ]
+[v ___awdiv@counter counter `uc  1 a 1 10 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 6 ]
+[v ___awdiv@divisor divisor `i  1 p 2 8 ]
+"41
+} 0
+"101 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_PeriodSet TMR0_PeriodSet `(v  1 e 1 0 ]
+{
+[v TMR0_PeriodSet@periodValue periodValue `uc  1 p 1 wreg ]
+[v TMR0_PeriodSet@periodValue periodValue `uc  1 p 1 wreg ]
+"103
+[v TMR0_PeriodSet@periodValue periodValue `uc  1 p 1 14 ]
+"104
+} 1
+"106
+[v _TMR0_PeriodGet TMR0_PeriodGet `(uc  1 e 1 0 ]
+{
+"109
+} 0
+"144 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_ConversionStart ADC_ConversionStart `(v  1 e 1 0 ]
+{
+"147
+} 0
+"44 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[v _Abs_LayerInit Abs_LayerInit `(v  1 e 1 0 ]
+{
+"56
+} 0
+"135 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_PeriodMatchCallbackRegister TMR0_PeriodMatchCallbackRegister `(v  1 e 1 0 ]
+{
+[v TMR0_PeriodMatchCallbackRegister@callbackHandler callbackHandler `*.38(v  1 p 3 6 ]
+"138
+} 0
+"153 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/pins.c
+[v _SW1_SetInterruptHandler SW1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v SW1_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 6 ]
+"155
+} 0
+"47 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"95
+} 0
+"388
+[v _ADC_ConversionDoneInterruptEnable ADC_ConversionDoneInterruptEnable `(v  1 e 1 0 ]
+{
+"391
+} 0
+"378
+[v _ADC_ConversionDoneCallbackRegister ADC_ConversionDoneCallbackRegister `(v  1 e 1 0 ]
+{
+[v ADC_ConversionDoneCallbackRegister@callback callback `*.38(v  1 p 3 6 ]
+"381
+} 0
+"139
+[v _ADC_ChannelSelect ADC_ChannelSelect `(v  1 e 1 0 ]
+{
+[v ADC_ChannelSelect@channel channel `E15637  1 p 1 wreg ]
+[v ADC_ChannelSelect@channel channel `E15637  1 p 1 wreg ]
+"141
+[v ADC_ChannelSelect@channel channel `E15637  1 p 1 6 ]
+"142
+} 1
+"80 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"103
+} 0
+"126 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"133
+} 0
+"77 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[v _TIM0_EllapsedTimeCallback TIM0_EllapsedTimeCallback `(v  1 e 1 0 ]
+{
+"79
+} 0
+"140 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_DefaultCallback TMR0_DefaultCallback `(v  1 s 1 TMR0_DefaultCallback ]
+{
+"143
+} 0
+"126 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"133
+} 0
+"138
+[v _SW1_ISR SW1_ISR `(v  1 e 1 0 ]
+{
+"148
+} 0
+"73 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[v _ExtISR_Handler ExtISR_Handler `(v  1 e 1 0 ]
+{
+"75
+} 0
+"160 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/system/src/pins.c
+[v _SW1_DefaultInterruptHandler SW1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"163
+} 0
+"422 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_ThresholdISR ADC_ThresholdISR `(v  1 e 1 0 ]
+{
+"434
+} 0
+"408
+[v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
+{
+"420
+} 0
+"81 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\AbsLayer.c
+[v _ADC_CompleteConversionCallback ADC_CompleteConversionCallback `(v  1 e 1 0 ]
+{
+"83
+} 0
+"159 C:\Users\ppeixoto\OneDrive - CENTI\Ambiente de Trabalho\Centi\Microchip\Test\Test.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_ConversionResultGet ADC_ConversionResultGet `(s  1 e 2 0 ]
+{
+"162
+} 0
