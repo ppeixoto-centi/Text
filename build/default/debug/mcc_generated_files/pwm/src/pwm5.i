@@ -26143,13 +26143,13 @@ unsigned char __t3rd16on(void);
 
 
 
-    PWM5CON = (uint8_t)0x80;
+    PWM5CON = (uint8_t)0x0;
 
 
-    PWM5DCH = (uint8_t)0x9E;
+    PWM5DCH = (uint8_t)0x4F;
 
 
-    PWM5DCL = (uint8_t)0x40;
+    PWM5DCL = (uint8_t)0xC0;
 
     CCPTMRS1bits.P5TSEL = (uint8_t)0x1;
 

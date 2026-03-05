@@ -2180,14 +2180,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _PWM5_Initialize ]
 [f ]
 "50
-[; ;mcc_generated_files/pwm/src/pwm5.c: 50:     PWM5CON = (uint8_t)0x80;
-[e = _PWM5CON -> -> 128 `i `uc ]
+[; ;mcc_generated_files/pwm/src/pwm5.c: 50:     PWM5CON = (uint8_t)0x0;
+[e = _PWM5CON -> -> 0 `i `uc ]
 "53
-[; ;mcc_generated_files/pwm/src/pwm5.c: 53:     PWM5DCH = (uint8_t)0x9E;
-[e = _PWM5DCH -> -> 158 `i `uc ]
+[; ;mcc_generated_files/pwm/src/pwm5.c: 53:     PWM5DCH = (uint8_t)0x4F;
+[e = _PWM5DCH -> -> 79 `i `uc ]
 "56
-[; ;mcc_generated_files/pwm/src/pwm5.c: 56:     PWM5DCL = (uint8_t)0x40;
-[e = _PWM5DCL -> -> 64 `i `uc ]
+[; ;mcc_generated_files/pwm/src/pwm5.c: 56:     PWM5DCL = (uint8_t)0xC0;
+[e = _PWM5DCL -> -> 192 `i `uc ]
 "58
 [; ;mcc_generated_files/pwm/src/pwm5.c: 58:     CCPTMRS1bits.P5TSEL = (uint8_t)0x1;
 [e = . . _CCPTMRS1bits 0 0 -> -> 1 `i `uc ]

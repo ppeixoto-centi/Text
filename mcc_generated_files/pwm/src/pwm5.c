@@ -46,14 +46,14 @@
  {
     // Set the PWM5 to the options selected in the User Interface
     
-    // PWMPOL active_hi; PWMEN enabled; 
-    PWM5CON = (uint8_t)0x80;
+    // PWMPOL active_hi; PWMEN disabled; 
+    PWM5CON = (uint8_t)0x0;
     
-    // PWMDCH 158; 
-    PWM5DCH = (uint8_t)0x9E;
+    // PWMDCH 79; 
+    PWM5DCH = (uint8_t)0x4F;
 
-    // PWMDCL 1; 
-    PWM5DCL = (uint8_t)0x40;
+    // PWMDCL 3; 
+    PWM5DCL = (uint8_t)0xC0;
     
     CCPTMRS1bits.P5TSEL = (uint8_t)0x1;
 

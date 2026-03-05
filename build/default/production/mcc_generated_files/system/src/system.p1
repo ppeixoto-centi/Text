@@ -2,15 +2,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 mcc_generated_files/system/src/../../system/clock.h
 [; ;mcc_generated_files/system/src/../../system/clock.h: 56: void CLOCK_Initialize(void);
 [v _CLOCK_Initialize `(v ~T0 @X0 0 ef ]
-"199 mcc_generated_files/system/src/../../system/pins.h
-[; ;mcc_generated_files/system/src/../../system/pins.h: 199: void PIN_MANAGER_Initialize (void);
+"379 mcc_generated_files/system/src/../../system/pins.h
+[; ;mcc_generated_files/system/src/../../system/pins.h: 379: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "56 mcc_generated_files/system/src/../../adc/adc.h
 [; ;mcc_generated_files/system/src/../../adc/adc.h: 56: void ADC_Initialize(void);
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"139 mcc_generated_files/system/src/../../spi/spi1.h
+[; ;mcc_generated_files/system/src/../../spi/spi1.h: 139: void SPI1_Initialize(void);
+[v _SPI1_Initialize `(v ~T0 @X0 0 ef ]
 "162 mcc_generated_files/system/src/../../timer/tmr0.h
 [; ;mcc_generated_files/system/src/../../timer/tmr0.h: 162: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
+"397 mcc_generated_files/system/src/../../timer/tmr2.h
+[; ;mcc_generated_files/system/src/../../timer/tmr2.h: 397: void TMR2_Initialize(void);
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
+"53 mcc_generated_files/system/src/../../dac/dac1.h
+[; ;mcc_generated_files/system/src/../../dac/dac1.h: 53: void DAC1_Initialize(void);
+[v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
+"89 mcc_generated_files/system/src/../../i2c_host/i2c1.h
+[; ;mcc_generated_files/system/src/../../i2c_host/i2c1.h: 89: void I2C1_Initialize(void);
+[v _I2C1_Initialize `(v ~T0 @X0 0 ef ]
+"57 mcc_generated_files/system/src/../../pwm/pwm5.h
+[; ;mcc_generated_files/system/src/../../pwm/pwm5.h: 57:  void PWM5_Initialize(void);
+[v _PWM5_Initialize `(v ~T0 @X0 0 ef ]
+"75 mcc_generated_files/system/src/../../uart/uart1.h
+[; ;mcc_generated_files/system/src/../../uart/uart1.h: 75: void UART1_Initialize(void);
+[v _UART1_Initialize `(v ~T0 @X0 0 ef ]
 "69 mcc_generated_files/system/src/../../system/interrupt.h
 [; ;mcc_generated_files/system/src/../../system/interrupt.h: 69: void INTERRUPT_Initialize (void);
 [v _INTERRUPT_Initialize `(v ~T0 @X0 0 ef ]
@@ -2180,12 +2198,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/system.c: 44:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]
 "45
-[; ;mcc_generated_files/system/src/system.c: 45:     TMR0_Initialize();
-[e ( _TMR0_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 45:     SPI1_Initialize();
+[e ( _SPI1_Initialize ..  ]
 "46
-[; ;mcc_generated_files/system/src/system.c: 46:     INTERRUPT_Initialize();
-[e ( _INTERRUPT_Initialize ..  ]
+[; ;mcc_generated_files/system/src/system.c: 46:     TMR0_Initialize();
+[e ( _TMR0_Initialize ..  ]
 "47
-[; ;mcc_generated_files/system/src/system.c: 47: }
-[e :UE 2202 ]
+[; ;mcc_generated_files/system/src/system.c: 47:     TMR2_Initialize();
+[e ( _TMR2_Initialize ..  ]
+"48
+[; ;mcc_generated_files/system/src/system.c: 48:     DAC1_Initialize();
+[e ( _DAC1_Initialize ..  ]
+"49
+[; ;mcc_generated_files/system/src/system.c: 49:     I2C1_Initialize();
+[e ( _I2C1_Initialize ..  ]
+"50
+[; ;mcc_generated_files/system/src/system.c: 50:     PWM5_Initialize();
+[e ( _PWM5_Initialize ..  ]
+"51
+[; ;mcc_generated_files/system/src/system.c: 51:     UART1_Initialize();
+[e ( _UART1_Initialize ..  ]
+"52
+[; ;mcc_generated_files/system/src/system.c: 52:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
+"53
+[; ;mcc_generated_files/system/src/system.c: 53: }
+[e :UE 2208 ]
 }

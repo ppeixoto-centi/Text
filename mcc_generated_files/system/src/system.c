@@ -42,10 +42,13 @@ void SYSTEM_Initialize(void)
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
     ADC_Initialize();
+    SPI1_Host_Initialize();
     TMR0_Initialize();
     TMR2_Initialize();
     DAC1_Initialize();
+    I2C1_Host_Initialize();
     PWM5_Initialize();
+    UART1_Initialize();
     INTERRUPT_Initialize();
 }
 

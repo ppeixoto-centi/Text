@@ -1,0 +1,164 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F43 `(v ~T0 @X0 0 tf1`a ]
+[v F46 `(v ~T0 @X0 0 tf1`a ]
+[v F49 `(v ~T0 @X0 0 tf1`a ]
+[v F52 `(v ~T0 @X0 0 tf1`a ]
+[v F55 `(a ~T0 @X0 0 tf ]
+[v F57 `(a ~T0 @X0 0 tf ]
+"35 ./Ui.h
+[; ;./Ui.h: 35: typedef struct{
+[s S1 `*F43 1 `*F46 1 `*F49 1 `*F52 1 `*F55 1 `*F57 1 ]
+[n S1 . Led0_Set Led1_Set Led2_Set Led3_Set Sw1_GetPin Sw2_GetPin ]
+"63 Ui.c
+[; ;Ui.c: 63: void Set_LedState(_Bool state, ui_leds led){
+[c E59 0 1 2 3 .. ]
+[n E59 . LED0 LED1 LED2 LED3  ]
+[v F99 `(v ~T0 @X0 0 tf1`a ]
+"19 Ui.c
+[; ;Ui.c: 19: static st_Ui_config ui_config = {};
+[v _ui_config `S1 ~T0 @X0 1 s ]
+[i _ui_config
+:U ..
+:U ..
+..
+..
+]
+"22
+[; ;Ui.c: 22: static uint8_t UI_SW1_button_pressed = 0;
+[v _UI_SW1_button_pressed `uc ~T0 @X0 1 s ]
+[i _UI_SW1_button_pressed
+-> -> 0 `i `uc
+]
+"23
+[; ;Ui.c: 23: static uint8_t UI_SW2_button_pressed = 0;
+[v _UI_SW2_button_pressed `uc ~T0 @X0 1 s ]
+[i _UI_SW2_button_pressed
+-> -> 0 `i `uc
+]
+"29
+[; ;Ui.c: 29: void UI_ISR_SW1(void)
+[v _UI_ISR_SW1 `(v ~T0 @X0 1 ef ]
+"30
+[; ;Ui.c: 30: {
+{
+[e :U _UI_ISR_SW1 ]
+[f ]
+"31
+[; ;Ui.c: 31:     UI_SW1_button_pressed = ui_config.Sw1_GetPin();
+[e = _UI_SW1_button_pressed -> ( *U . _ui_config 4 ..  `uc ]
+"32
+[; ;Ui.c: 32: }
+[e :UE 2 ]
+}
+"34
+[; ;Ui.c: 34: void UI_ISR_SW2(void)
+[v _UI_ISR_SW2 `(v ~T0 @X0 1 ef ]
+"35
+[; ;Ui.c: 35: {
+{
+[e :U _UI_ISR_SW2 ]
+[f ]
+"36
+[; ;Ui.c: 36:     UI_SW2_button_pressed = ui_config.Sw2_GetPin();
+[e = _UI_SW2_button_pressed -> ( *U . _ui_config 5 ..  `uc ]
+"37
+[; ;Ui.c: 37: }
+[e :UE 3 ]
+}
+"43
+[; ;Ui.c: 43: void Ui_Initialize(st_Ui_config config_struct){
+[v _Ui_Initialize `(v ~T0 @X0 1 ef1`S1 ]
+{
+[e :U _Ui_Initialize ]
+[v _config_struct `S1 ~T0 @X0 1 r1 ]
+[f ]
+"44
+[; ;Ui.c: 44:     ui_config = config_struct;
+[e = _ui_config _config_struct ]
+"46
+[; ;Ui.c: 46:     UI_SW1_button_pressed = ui_config.Sw1_GetPin();
+[e = _UI_SW1_button_pressed -> ( *U . _ui_config 4 ..  `uc ]
+"47
+[; ;Ui.c: 47:     UI_SW2_button_pressed = ui_config.Sw2_GetPin();
+[e = _UI_SW2_button_pressed -> ( *U . _ui_config 5 ..  `uc ]
+"49
+[; ;Ui.c: 49:     ui_config.Led0_Set(( 0 ));
+[e ( *U . _ui_config 0 (1 -> -> 0 `i `a ]
+"50
+[; ;Ui.c: 50:     ui_config.Led1_Set(( 0 ));
+[e ( *U . _ui_config 1 (1 -> -> 0 `i `a ]
+"51
+[; ;Ui.c: 51:     ui_config.Led2_Set(( 0 ));
+[e ( *U . _ui_config 2 (1 -> -> 0 `i `a ]
+"52
+[; ;Ui.c: 52:     ui_config.Led3_Set(( 0 ));
+[e ( *U . _ui_config 3 (1 -> -> 0 `i `a ]
+"53
+[; ;Ui.c: 53: }
+[e :UE 4 ]
+}
+"55
+[; ;Ui.c: 55: _Bool Sw1_GetButtonState(void){
+[v _Sw1_GetButtonState `(a ~T0 @X0 1 ef ]
+{
+[e :U _Sw1_GetButtonState ]
+[f ]
+"56
+[; ;Ui.c: 56:     return UI_SW1_button_pressed;
+[e ) -> _UI_SW1_button_pressed `a ]
+[e $UE 5  ]
+"57
+[; ;Ui.c: 57: }
+[e :UE 5 ]
+}
+"59
+[; ;Ui.c: 59: _Bool Sw2_GetButtonState(void){
+[v _Sw2_GetButtonState `(a ~T0 @X0 1 ef ]
+{
+[e :U _Sw2_GetButtonState ]
+[f ]
+"60
+[; ;Ui.c: 60:     return UI_SW2_button_pressed;
+[e ) -> _UI_SW2_button_pressed `a ]
+[e $UE 6  ]
+"61
+[; ;Ui.c: 61: }
+[e :UE 6 ]
+}
+"63
+[; ;Ui.c: 63: void Set_LedState(_Bool state, ui_leds led){
+[v _Set_LedState `(v ~T0 @X0 1 ef2`a`E59 ]
+{
+[e :U _Set_LedState ]
+[v _state `a ~T0 @X0 1 r1 ]
+[v _led `E59 ~T0 @X0 1 r2 ]
+[f ]
+"64
+[; ;Ui.c: 64:     if(led < 0 || led > 3)
+[e $ ! || < -> _led `ui -> -> 0 `i `ui > -> _led `ui -> -> 3 `i `ui 8  ]
+"65
+[; ;Ui.c: 65:         return;
+[e $UE 7  ]
+[e :U 8 ]
+"67
+[; ;Ui.c: 67:     Gpio_Set table[4];
+[v _table `*F99 ~T0 @X0 -> 4 `i a ]
+"68
+[; ;Ui.c: 68:     table[0] = ui_config.Led0_Set;
+[e = *U + &U _table * -> -> -> 0 `i `ui `ux -> -> # *U &U _table `ui `ux . _ui_config 0 ]
+"69
+[; ;Ui.c: 69:     table[1] = ui_config.Led1_Set;
+[e = *U + &U _table * -> -> -> 1 `i `ui `ux -> -> # *U &U _table `ui `ux . _ui_config 1 ]
+"70
+[; ;Ui.c: 70:     table[2] = ui_config.Led2_Set;
+[e = *U + &U _table * -> -> -> 2 `i `ui `ux -> -> # *U &U _table `ui `ux . _ui_config 2 ]
+"71
+[; ;Ui.c: 71:     table[3] = ui_config.Led3_Set;
+[e = *U + &U _table * -> -> -> 3 `i `ui `ux -> -> # *U &U _table `ui `ux . _ui_config 3 ]
+"73
+[; ;Ui.c: 73:     table[led](state);
+[e ( *U *U + &U _table * -> _led `ux -> -> # *U &U _table `ui `ux (1 _state ]
+"74
+[; ;Ui.c: 74: }
+[e :UE 7 ]
+}

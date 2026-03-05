@@ -26123,7 +26123,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
 # 39 "mcc_generated_files/system/src/../pins.h" 2
-# 219 "mcc_generated_files/system/src/../pins.h"
+# 379 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -26141,11 +26141,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void SW1_ISR(void);
-# 245 "mcc_generated_files/system/src/../pins.h"
+# 405 "mcc_generated_files/system/src/../pins.h"
 void SW1_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "mcc_generated_files/system/src/../pins.h"
+# 416 "mcc_generated_files/system/src/../pins.h"
 extern void (*SW1_InterruptHandler)(void);
-# 267 "mcc_generated_files/system/src/../pins.h"
+# 427 "mcc_generated_files/system/src/../pins.h"
 void SW1_DefaultInterruptHandler(void);
 # 36 "mcc_generated_files/system/src/pins.c" 2
 
@@ -26158,27 +26158,27 @@ void PIN_MANAGER_Initialize(void)
 
     LATA = 0xF0;
     LATB = 0x0;
-    LATC = 0x0;
+    LATC = 0x18;
 
 
 
     ODCONA = 0x0;
     ODCONB = 0x0;
-    ODCONC = 0x0;
+    ODCONC = 0x18;
 
 
 
 
-    TRISA = 0xB;
-    TRISB = 0xFF;
-    TRISC = 0xFF;
+    TRISA = 0x3;
+    TRISB = 0xF7;
+    TRISC = 0xE5;
 
 
 
 
-    ANSELA = 0x2F;
-    ANSELB = 0xEF;
-    ANSELC = 0xDF;
+    ANSELA = 0x27;
+    ANSELB = 0xE1;
+    ANSELC = 0xC4;
 
 
 
@@ -26214,7 +26214,17 @@ void PIN_MANAGER_Initialize(void)
 
 
 
+    SPI1SDIPPS = 0xA;
+    U1RXPPS = 0x10;
+    RB3PPS = 0x1F;
     RA5PPS = 0x0D;
+    RC1PPS = 0x13;
+    I2C1SCLPPS = 0x13;
+    RC3PPS = 0x21;
+    I2C1SDAPPS = 0x14;
+    RC4PPS = 0x22;
+    SPI1SCKPPS = 0x9;
+    RB1PPS = 0x1E;
 
 
 

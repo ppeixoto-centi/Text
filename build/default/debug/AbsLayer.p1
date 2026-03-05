@@ -1,70 +1,106 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F15644 `(v ~T0 @X0 0 tf ]
-"245 ./MCC_Generated_Files/system/pins.h
-[; ;./MCC_Generated_Files/system/pins.h: 245: void SW1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _SW1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15644 ]
+[v F54 `(v ~T0 @X0 0 tf1`a ]
+[v F57 `(v ~T0 @X0 0 tf1`a ]
+[v F60 `(v ~T0 @X0 0 tf1`a ]
+[v F63 `(v ~T0 @X0 0 tf1`a ]
+[v F66 `(v ~T0 @X0 0 tf ]
+[v F68 `(a ~T0 @X0 0 tf ]
+[v F70 `(a ~T0 @X0 0 tf ]
+[v F72 `(v ~T0 @X0 0 tf ]
+"37 ./Ui.h
+[; ;./Ui.h: 37: typedef struct{
+[s S1 `*F54 1 `*F57 1 `*F60 1 `*F63 1 `*F66 1 `*F68 1 `*F70 1 `*F72 1 ]
+[n S1 . Led0_Set Led1_Set Led2_Set Led3_Set Led0_Toogle Sw1_GetPin Sw2_GetPin SW1_Clear ]
+"45 AbsLayer.c
+[; ;AbsLayer.c: 45: static void Led0_SetState(_Bool);
+[v _Led0_SetState `(v ~T0 @X0 0 sf1`a ]
+"46
+[; ;AbsLayer.c: 46: static void Led1_SetState(_Bool);
+[v _Led1_SetState `(v ~T0 @X0 0 sf1`a ]
+"47
+[; ;AbsLayer.c: 47: static void Led2_SetState(_Bool);
+[v _Led2_SetState `(v ~T0 @X0 0 sf1`a ]
+"48
+[; ;AbsLayer.c: 48: static void Led3_SetState(_Bool);
+[v _Led3_SetState `(v ~T0 @X0 0 sf1`a ]
+"50
+[; ;AbsLayer.c: 50: static void Led0_Toggle(void);
+[v _Led0_Toggle `(v ~T0 @X0 0 sf ]
+"52
+[; ;AbsLayer.c: 52: static _Bool SW1_ReadPin(void);
+[v _SW1_ReadPin `(a ~T0 @X0 0 sf ]
+"53
+[; ;AbsLayer.c: 53: static _Bool SW2_ReadPin(void);
+[v _SW2_ReadPin `(a ~T0 @X0 0 sf ]
+"112 ./Ui.h
+[; ;./Ui.h: 112: void Ui_Initialize(st_Ui_config);
+[v _Ui_Initialize `(v ~T0 @X0 0 ef1`S1 ]
+[v F15694 `(v ~T0 @X0 0 tf ]
+"405 ./MCC_Generated_Files/system/pins.h
+[; ;./MCC_Generated_Files/system/pins.h: 405: void SW1_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _SW1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F15694 ]
 "39 ./AbsLayer.h
 [; ;./AbsLayer.h: 39: void ExtISR_Handler(void);
 [v _ExtISR_Handler `(v ~T0 @X0 0 ef ]
-[v F15819 `(v ~T0 @X0 0 tf ]
+[v F15869 `(v ~T0 @X0 0 tf ]
 "264 ./MCC_Generated_Files/timer/tmr0.h
 [; ;./MCC_Generated_Files/timer/tmr0.h: 264: void TMR0_PeriodMatchCallbackRegister(void (* CallbackHandler)(void));
-[v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 0 ef1`*F15819 ]
+[v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 0 ef1`*F15869 ]
 "40 ./AbsLayer.h
 [; ;./AbsLayer.h: 40: void TIM0_EllapsedTimeCallback(void);
 [v _TIM0_EllapsedTimeCallback `(v ~T0 @X0 0 ef ]
-"56 ./MCC_Generated_Files/adc/adc.h
-[; ;./MCC_Generated_Files/adc/adc.h: 56: void ADC_Initialize(void);
-[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
-"52 AbsLayer.c
-[; ;AbsLayer.c: 52:     ADC_ChannelSelect(ADC_CHANNEL_ANA0);
-[c E15654 59 60 61 62 63 0 .. ]
-[n E15654 . ADC_CHANNEL_VSS ADC_CHANNEL_TEMP ADC_CHANNEL_DAC1 ADC_CHANNEL_FVR_BUFFER1 ADC_CHANNEL_FVR_BUFFER2 ADC_CHANNEL_ANA0  ]
-"88 ./MCC_Generated_Files/adc/adc.h
-[; ;./MCC_Generated_Files/adc/adc.h: 88: void ADC_ChannelSelect(adc_channel_t channel);
-[v _ADC_ChannelSelect `(v ~T0 @X0 0 ef1`E15654 ]
-[v F15791 `(v ~T0 @X0 0 tf ]
-"462
+[v F15841 `(v ~T0 @X0 0 tf ]
+"462 ./MCC_Generated_Files/adc/adc.h
 [; ;./MCC_Generated_Files/adc/adc.h: 462: void ADC_ConversionDoneCallbackRegister(void (*callback)(void));
-[v _ADC_ConversionDoneCallbackRegister `(v ~T0 @X0 0 ef1`*F15791 ]
+[v _ADC_ConversionDoneCallbackRegister `(v ~T0 @X0 0 ef1`*F15841 ]
 "41 ./AbsLayer.h
 [; ;./AbsLayer.h: 41: void ADC_CompleteConversionCallback(void);
 [v _ADC_CompleteConversionCallback `(v ~T0 @X0 0 ef ]
-"478 ./MCC_Generated_Files/adc/adc.h
-[; ;./MCC_Generated_Files/adc/adc.h: 478: void ADC_ConversionDoneInterruptEnable(void);
-[v _ADC_ConversionDoneInterruptEnable `(v ~T0 @X0 0 ef ]
-"53 ./mcc_generated_files/dac/dac1.h
-[; ;./mcc_generated_files/dac/dac1.h: 53: void DAC1_Initialize(void);
-[v _DAC1_Initialize `(v ~T0 @X0 0 ef ]
-"57 ./mcc_generated_files/pwm/pwm5.h
-[; ;./mcc_generated_files/pwm/pwm5.h: 57:  void PWM5_Initialize(void);
-[v _PWM5_Initialize `(v ~T0 @X0 0 ef ]
-"45364 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45364:     struct {
-[s S2074 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2074 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-"45363
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45363: typedef union {
-[u S2073 `S2074 1 ]
-[n S2073 . . ]
-"45375
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45375: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x3FCC)));
-[v _PORTCbits `VS2073 ~T0 @X0 0 e@16332 ]
-"44718
+"165 ./mcc_generated_files/uart/../system/../spi/spi1.h
+[; ;./mcc_generated_files/uart/../system/../spi/spi1.h: 165: void SPI1_Close(void);
+[v _SPI1_Close `(v ~T0 @X0 0 ef ]
+"44718 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 44718:     struct {
-[s S2055 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2055 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+[s S2056 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2056 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
 "44728
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 44728:     struct {
-[s S2056 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2056 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
+[s S2057 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2057 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
 "44717
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 44717: typedef union {
-[u S2054 `S2055 1 `S2056 1 ]
-[n S2054 . . . ]
+[u S2055 `S2056 1 `S2057 1 ]
+[n S2055 . . . ]
 "44739
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 44739: extern volatile LATAbits_t LATAbits __attribute__((address(0x3FBA)));
-[v _LATAbits `VS2054 ~T0 @X0 0 e@16314 ]
+[v _LATAbits `VS2055 ~T0 @X0 0 e@16314 ]
+"43 AbsLayer.c
+[; ;AbsLayer.c: 43: static uint8_t UART_SendBuffer(uint8_t *);
+[v _UART_SendBuffer `(uc ~T0 @X0 0 sf1`*uc ]
+"117 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h
+[; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h: 117: int printf(const char *restrict, ...);
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"179 ./MCC_Generated_Files/timer/tmr0.h
+[; ;./MCC_Generated_Files/timer/tmr0.h: 179: void TMR0_Start(void);
+[v _TMR0_Start `(v ~T0 @X0 0 ef ]
+"168 ./Ui.h
+[; ;./Ui.h: 168: void Ui_Sw2_ReadPin(void);
+[v _Ui_Sw2_ReadPin `(v ~T0 @X0 0 ef ]
+"177
+[; ;./Ui.h: 177: void Ui_Led0_Toggle(void);
+[v _Ui_Led0_Toggle `(v ~T0 @X0 0 ef ]
+"150
+[; ;./Ui.h: 150: _Bool Ui_Sw2_GetButtonState(void);
+[v _Ui_Sw2_GetButtonState `(a ~T0 @X0 0 ef ]
+"37765 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 37765: extern volatile unsigned char PWM5CON __attribute__((address(0x3F6E)));
+[v _PWM5CON `Vuc ~T0 @X0 0 e@16238 ]
+"139 ./Ui.h
+[; ;./Ui.h: 139: _Bool Ui_Sw1_GetButtonState(void);
+[v _Ui_Sw1_GetButtonState `(a ~T0 @X0 0 ef ]
+"186
+[; ;./Ui.h: 186: void Ui_SW1_Clear(void);
+[v _Ui_SW1_Clear `(v ~T0 @X0 0 ef ]
 "215 ./MCC_Generated_Files/timer/tmr0.h
 [; ;./MCC_Generated_Files/timer/tmr0.h: 215: void TMR0_PeriodSet(uint8_t periodCount);
 [v _TMR0_PeriodSet `(v ~T0 @X0 0 ef1`uc ]
@@ -74,17 +110,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "98 ./MCC_Generated_Files/adc/adc.h
 [; ;./MCC_Generated_Files/adc/adc.h: 98: void ADC_ConversionStart(void);
 [v _ADC_ConversionStart `(v ~T0 @X0 0 ef ]
-"45302 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45302:     struct {
-[s S2072 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S2072 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"45301
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45301: typedef union {
-[u S2071 `S2072 1 ]
-[n S2071 . . ]
-"45313
-[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45313: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x3FCB)));
-[v _PORTBbits `VS2071 ~T0 @X0 0 e@16331 ]
+"157 ./mcc_generated_files/uart/../system/../spi/spi1.h
+[; ;./mcc_generated_files/uart/../system/../spi/spi1.h: 157: _Bool SPI1_Open(uint8_t spiConfigIndex);
+[v _SPI1_Open `(a ~T0 @X0 0 ef1`uc ]
+"127 AbsLayer.c
+[; ;AbsLayer.c: 127:     SPI1_Open(HOST_CONFIG);
+[c E16041 0 1 .. ]
+[n E16041 . HOST_CONFIG SPI1_DEFAULT  ]
+"193 ./mcc_generated_files/uart/../system/../spi/spi1.h
+[; ;./mcc_generated_files/uart/../system/../spi/spi1.h: 193: void SPI1_BufferWrite(void * bufferData, size_t bufferSize);
+[v _SPI1_BufferWrite `(v ~T0 @X0 0 ef2`*v`ui ]
+"202
+[; ;./mcc_generated_files/uart/../system/../spi/spi1.h: 202: void SPI1_BufferRead(void * bufferData, size_t bufferSize);
+[v _SPI1_BufferRead `(v ~T0 @X0 0 ef2`*v`ui ]
+"121 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h
+[; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"87 ./Ui.h
+[; ;./Ui.h: 87: void Ui_ISR_SW1(void);
+[v _Ui_ISR_SW1 `(v ~T0 @X0 0 ef ]
 "125 ./MCC_Generated_Files/adc/adc.h
 [; ;./MCC_Generated_Files/adc/adc.h: 125: adc_result_t ADC_ConversionResultGet(void);
 [v _ADC_ConversionResultGet `(s ~T0 @X0 0 ef ]
@@ -94,6 +138,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "65 ./mcc_generated_files/pwm/pwm5.h
 [; ;./mcc_generated_files/pwm/pwm5.h: 65:  void PWM5_LoadDutyValue(uint16_t dutyValue);
 [v _PWM5_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
+"248 ./mcc_generated_files/uart/uart1.h
+[; ;./mcc_generated_files/uart/uart1.h: 248: void UART1_Write(uint8_t txData);
+[v _UART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"209
+[; ;./mcc_generated_files/uart/uart1.h: 209: _Bool UART1_IsTxReady(void);
+[v _UART1_IsTxReady `(a ~T0 @X0 0 ef ]
+"218
+[; ;./mcc_generated_files/uart/uart1.h: 218: _Bool UART1_IsTxDone(void);
+[v _UART1_IsTxDone `(a ~T0 @X0 0 ef ]
+"45302 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45302:     struct {
+[s S2073 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2073 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"45301
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45301: typedef union {
+[u S2072 `S2073 1 ]
+[n S2072 . . ]
+"45313
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45313: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x3FCB)));
+[v _PORTBbits `VS2072 ~T0 @X0 0 e@16331 ]
+"45364
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45364:     struct {
+[s S2075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2075 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"45363
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45363: typedef union {
+[u S2074 `S2075 1 ]
+[n S2074 . . ]
+"45375
+[; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 45375: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x3FCC)));
+[v _PORTCbits `VS2074 ~T0 @X0 0 e@16332 ]
 "192 C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 192: __asm("STATUS_CSHAD equ 03880h");
 [; <" STATUS_CSHAD equ 03880h ;# ">
@@ -2242,180 +2317,560 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46881
 [; ;C:/Program Files/Microchip/MPLABX/v6.30/packs/Microchip/PIC18F-K_DFP/1.15.303/xc8\pic\include\proc/pic18f27k42.h: 46881: __asm("TOSU equ 03FFFh");
 [; <" TOSU equ 03FFFh ;# ">
-"28 AbsLayer.c
-[; ;AbsLayer.c: 28: adc_result_t adc_value = 0;
+"32 AbsLayer.c
+[; ;AbsLayer.c: 32: const char str[] = "Button Pressed\r";
+[v _str `Cuc ~T0 @X0 -> 16 `i e ]
+[i _str
+:U ..
+-> 66 `c
+-> 117 `c
+-> 116 `c
+-> 116 `c
+-> 111 `c
+-> 110 `c
+-> 32 `c
+-> 80 `c
+-> 114 `c
+-> 101 `c
+-> 115 `c
+-> 115 `c
+-> 101 `c
+-> 100 `c
+-> 13 `c
+-> 0 `c
+..
+]
+"34
+[; ;AbsLayer.c: 34: adc_result_t adc_value = 0;
 [v _adc_value `s ~T0 @X0 1 e ]
 [i _adc_value
 -> -> 0 `i `s
 ]
-"30
-[; ;AbsLayer.c: 30: static uint8_t abs_button;
+"36
+[; ;AbsLayer.c: 36: static uint8_t abs_button;
 [v _abs_button `uc ~T0 @X0 1 s ]
-"31
-[; ;AbsLayer.c: 31: uint8_t period_elapsed = 0;
+"37
+[; ;AbsLayer.c: 37: uint8_t period_elapsed = 0;
 [v _period_elapsed `uc ~T0 @X0 1 e ]
 [i _period_elapsed
 -> -> 0 `i `uc
 ]
-"46
-[; ;AbsLayer.c: 46: void Abs_LayerInit(void){
+"59
+[; ;AbsLayer.c: 59: void Abs_LayerInit(void){
 [v _Abs_LayerInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _Abs_LayerInit ]
 [f ]
-"47
-[; ;AbsLayer.c: 47:     abs_button = ( 1 );
-[e = _abs_button -> -> 1 `i `uc ]
-"48
-[; ;AbsLayer.c: 48:     SW1_SetInterruptHandler(ExtISR_Handler);
-[e ( _SW1_SetInterruptHandler (1 &U _ExtISR_Handler ]
-"49
-[; ;AbsLayer.c: 49:     TMR0_PeriodMatchCallbackRegister(TIM0_EllapsedTimeCallback);
-[e ( _TMR0_PeriodMatchCallbackRegister (1 &U _TIM0_EllapsedTimeCallback ]
-"51
-[; ;AbsLayer.c: 51:     ADC_Initialize();
-[e ( _ADC_Initialize ..  ]
-"52
-[; ;AbsLayer.c: 52:     ADC_ChannelSelect(ADC_CHANNEL_ANA0);
-[e ( _ADC_ChannelSelect (1 . `E15654 5 ]
-"54
-[; ;AbsLayer.c: 54:     ADC_ConversionDoneCallbackRegister(ADC_CompleteConversionCallback);
-[e ( _ADC_ConversionDoneCallbackRegister (1 &U _ADC_CompleteConversionCallback ]
-"55
-[; ;AbsLayer.c: 55:     ADC_ConversionDoneInterruptEnable();
-[e ( _ADC_ConversionDoneInterruptEnable ..  ]
-"57
-[; ;AbsLayer.c: 57:     DAC1_Initialize();
-[e ( _DAC1_Initialize ..  ]
-"58
-[; ;AbsLayer.c: 58:     PWM5_Initialize();
-[e ( _PWM5_Initialize ..  ]
 "60
-[; ;AbsLayer.c: 60:     while (PORTCbits.RC5 != 0);
-[e $U 2203  ]
-[e :U 2204 ]
-[e :U 2203 ]
-[e $ != -> . . _PORTCbits 0 5 `i -> 0 `i 2204  ]
-[e :U 2205 ]
-"61
-[; ;AbsLayer.c: 61: }
-[e :UE 2202 ]
-}
+[; ;AbsLayer.c: 60:     st_Ui_config config;
+[v _config `S1 ~T0 @X0 1 a ]
 "63
-[; ;AbsLayer.c: 63: void Abs_Loop(void){
+[; ;AbsLayer.c: 63:     config.Led0_Set = Led0_SetState;
+[e = . _config 0 &U _Led0_SetState ]
+"64
+[; ;AbsLayer.c: 64:     config.Led1_Set = Led1_SetState;
+[e = . _config 1 &U _Led1_SetState ]
+"65
+[; ;AbsLayer.c: 65:     config.Led2_Set = Led2_SetState;
+[e = . _config 2 &U _Led2_SetState ]
+"66
+[; ;AbsLayer.c: 66:     config.Led3_Set = Led3_SetState;
+[e = . _config 3 &U _Led3_SetState ]
+"68
+[; ;AbsLayer.c: 68:     config.Led0_Toogle = Led0_Toggle;
+[e = . _config 4 &U _Led0_Toggle ]
+"71
+[; ;AbsLayer.c: 71:     config.Sw1_GetPin = SW1_ReadPin;
+[e = . _config 5 &U _SW1_ReadPin ]
+"72
+[; ;AbsLayer.c: 72:     config.Sw2_GetPin = SW2_ReadPin;
+[e = . _config 6 &U _SW2_ReadPin ]
+"75
+[; ;AbsLayer.c: 75:     Ui_Initialize(config);
+[e ( _Ui_Initialize (1 _config ]
+"78
+[; ;AbsLayer.c: 78:     SW1_SetInterruptHandler(ExtISR_Handler);
+[e ( _SW1_SetInterruptHandler (1 &U _ExtISR_Handler ]
+"79
+[; ;AbsLayer.c: 79:     TMR0_PeriodMatchCallbackRegister(TIM0_EllapsedTimeCallback);
+[e ( _TMR0_PeriodMatchCallbackRegister (1 &U _TIM0_EllapsedTimeCallback ]
+"80
+[; ;AbsLayer.c: 80:     ADC_ConversionDoneCallbackRegister(ADC_CompleteConversionCallback);
+[e ( _ADC_ConversionDoneCallbackRegister (1 &U _ADC_CompleteConversionCallback ]
+"82
+[; ;AbsLayer.c: 82:     SPI1_Close();
+[e ( _SPI1_Close ..  ]
+"83
+[; ;AbsLayer.c: 83:     do { LATAbits.LATA3 = 1; } while(0);
+[e :U 2214 ]
+{
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 2213 ]
+"85
+[; ;AbsLayer.c: 85:     UART_SendBuffer("Press Button SW2, Application in Halt mode\n\r");
+[e ( _UART_SendBuffer (1 :s 1C ]
+"86
+[; ;AbsLayer.c: 86:     printf("Polling mode send with printf\n\r");
+[e ( _printf :s 2C ]
+"88
+[; ;AbsLayer.c: 88:     TMR0_Start();
+[e ( _TMR0_Start ..  ]
+"91
+[; ;AbsLayer.c: 91:     while (Ui_Sw2_GetButtonState() != 1){
+[e $U 2215  ]
+[e :U 2216 ]
+{
+"92
+[; ;AbsLayer.c: 92:         Ui_Sw2_ReadPin();
+[e ( _Ui_Sw2_ReadPin ..  ]
+"94
+[; ;AbsLayer.c: 94:         if (period_elapsed == ( 1 )){
+[e $ ! == -> _period_elapsed `i -> 1 `i 2218  ]
+{
+"95
+[; ;AbsLayer.c: 95:             period_elapsed = ( 0 );
+[e = _period_elapsed -> -> 0 `i `uc ]
+"96
+[; ;AbsLayer.c: 96:             Ui_Led0_Toggle();
+[e ( _Ui_Led0_Toggle ..  ]
+"97
+[; ;AbsLayer.c: 97:         }
+}
+[e :U 2218 ]
+"98
+[; ;AbsLayer.c: 98:     }
+}
+[e :U 2215 ]
+"91
+[; ;AbsLayer.c: 91:     while (Ui_Sw2_GetButtonState() != 1){
+[e $ != -> ( _Ui_Sw2_GetButtonState ..  `i -> 1 `i 2216  ]
+[e :U 2217 ]
+"100
+[; ;AbsLayer.c: 100:     printf("Press SW1 To Increase Toggle Freq\n\r");
+[e ( _printf :s 3C ]
+"103
+[; ;AbsLayer.c: 103:     PWM5CON |= (0X1) << 7;
+[e =| _PWM5CON -> << -> 1 `i -> 7 `i `Vuc ]
+"105
+[; ;AbsLayer.c: 105:     printf("Change the resistance to change the btightness of LED_D3\n\r");
+[e ( _printf :s 4C ]
+"107
+[; ;AbsLayer.c: 107: }
+[e :UE 2211 ]
+}
+"109
+[; ;AbsLayer.c: 109: void Abs_Loop(void){
 [v _Abs_Loop `(v ~T0 @X0 1 ef ]
 {
 [e :U _Abs_Loop ]
 [f ]
-"64
-[; ;AbsLayer.c: 64:     if (period_elapsed == ( 1 )){
-[e $ ! == -> _period_elapsed `i -> 1 `i 2207  ]
+"110
+[; ;AbsLayer.c: 110:     uint8_t buffer[2];
+[v _buffer `uc ~T0 @X0 -> 2 `i a ]
+"111
+[; ;AbsLayer.c: 111:     char out_buffer[20];
+[v _out_buffer `uc ~T0 @X0 -> 20 `i a ]
+"112
+[; ;AbsLayer.c: 112:     if (period_elapsed == ( 1 )){
+[e $ ! == -> _period_elapsed `i -> 1 `i 2220  ]
 {
-"65
-[; ;AbsLayer.c: 65:         period_elapsed = ( 0 );
+"113
+[; ;AbsLayer.c: 113:         period_elapsed = ( 0 );
 [e = _period_elapsed -> -> 0 `i `uc ]
-"67
-[; ;AbsLayer.c: 67:         do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0);
-[e :U 2210 ]
+"115
+[; ;AbsLayer.c: 115:         do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0);
+[e :U 2223 ]
 {
 [e = . . _LATAbits 0 4 -> ~ -> . . _LATAbits 0 4 `i `uc ]
 }
-[e :U 2209 ]
-"68
-[; ;AbsLayer.c: 68:     }
+[e :U 2222 ]
+"116
+[; ;AbsLayer.c: 116:     }
 }
-[e :U 2207 ]
-"70
-[; ;AbsLayer.c: 70:     if (abs_button == ( 0 )){
-[e $ ! == -> _abs_button `i -> 0 `i 2211  ]
+[e :U 2220 ]
+"118
+[; ;AbsLayer.c: 118:     if (Ui_Sw1_GetButtonState() == ( 0 )){
+[e $ ! == -> ( _Ui_Sw1_GetButtonState ..  `i -> 0 `i 2224  ]
 {
-"71
-[; ;AbsLayer.c: 71:         abs_button = ( 1 );
-[e = _abs_button -> -> 1 `i `uc ]
-"72
-[; ;AbsLayer.c: 72:         TMR0_PeriodSet( (uint8_t)(TMR0_PeriodGet() / 2));
+"119
+[; ;AbsLayer.c: 119:         Ui_SW1_Clear();
+[e ( _Ui_SW1_Clear ..  ]
+"120
+[; ;AbsLayer.c: 120:         UART_SendBuffer(str);
+[e ( _UART_SendBuffer (1 -> &U _str `*uc ]
+"121
+[; ;AbsLayer.c: 121:         TMR0_PeriodSet( (uint8_t)(TMR0_PeriodGet() / 2));
 [e ( _TMR0_PeriodSet (1 -> / -> ( _TMR0_PeriodGet ..  `i -> 2 `i `uc ]
-"73
-[; ;AbsLayer.c: 73:     }
+"123
+[; ;AbsLayer.c: 123:     }
 }
-[e :U 2211 ]
-"75
-[; ;AbsLayer.c: 75:     ADC_ConversionStart();
+[e :U 2224 ]
+"125
+[; ;AbsLayer.c: 125:     ADC_ConversionStart();
 [e ( _ADC_ConversionStart ..  ]
-"76
-[; ;AbsLayer.c: 76: }
-[e :UE 2206 ]
+"127
+[; ;AbsLayer.c: 127:     SPI1_Open(HOST_CONFIG);
+[e ( _SPI1_Open (1 -> . `E16041 0 `uc ]
+"128
+[; ;AbsLayer.c: 128:     do { LATAbits.LATA3 = 0; } while(0);
+[e :U 2227 ]
+{
+[e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
 }
-"78
-[; ;AbsLayer.c: 78: void ExtISR_Handler(void){
+[e :U 2226 ]
+"129
+[; ;AbsLayer.c: 129:     SPI1_BufferWrite(buffer, 2);
+[e ( _SPI1_BufferWrite (2 , -> &U _buffer `*v -> -> 2 `i `ui ]
+"130
+[; ;AbsLayer.c: 130:     SPI1_BufferRead(buffer, 2);
+[e ( _SPI1_BufferRead (2 , -> &U _buffer `*v -> -> 2 `i `ui ]
+"132
+[; ;AbsLayer.c: 132:     sprintf(out_buffer, "MSB %d LSB %d\n\r", buffer[1], buffer[0]);
+[e ( _sprintf (1 , , (. , &U _out_buffer :s 5C -> *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `i ]
+"133
+[; ;AbsLayer.c: 133:     UART_SendBuffer(out_buffer);
+[e ( _UART_SendBuffer (1 -> &U _out_buffer `*uc ]
+"135
+[; ;AbsLayer.c: 135:     SPI1_Close();
+[e ( _SPI1_Close ..  ]
+"137
+[; ;AbsLayer.c: 137:     do { LATAbits.LATA3 = 1; } while(0);
+[e :U 2230 ]
+{
+[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
+}
+[e :U 2229 ]
+"138
+[; ;AbsLayer.c: 138: }
+[e :UE 2219 ]
+}
+"140
+[; ;AbsLayer.c: 140: void ExtISR_Handler(void){
 [v _ExtISR_Handler `(v ~T0 @X0 1 ef ]
 {
 [e :U _ExtISR_Handler ]
 [f ]
-"79
-[; ;AbsLayer.c: 79:     abs_button = PORTBbits.RB4;
-[e = _abs_button . . _PORTBbits 0 4 ]
-"80
-[; ;AbsLayer.c: 80: }
-[e :UE 2212 ]
+"141
+[; ;AbsLayer.c: 141:     Ui_ISR_SW1();
+[e ( _Ui_ISR_SW1 ..  ]
+"142
+[; ;AbsLayer.c: 142: }
+[e :UE 2231 ]
 }
-"82
-[; ;AbsLayer.c: 82: void TIM0_EllapsedTimeCallback(void){
+"144
+[; ;AbsLayer.c: 144: void TIM0_EllapsedTimeCallback(void){
 [v _TIM0_EllapsedTimeCallback `(v ~T0 @X0 1 ef ]
 {
 [e :U _TIM0_EllapsedTimeCallback ]
 [f ]
-"83
-[; ;AbsLayer.c: 83:     period_elapsed = ( 1 );
+"145
+[; ;AbsLayer.c: 145:     period_elapsed = ( 1 );
 [e = _period_elapsed -> -> 1 `i `uc ]
-"84
-[; ;AbsLayer.c: 84: }
-[e :UE 2213 ]
+"146
+[; ;AbsLayer.c: 146: }
+[e :UE 2232 ]
 }
-"86
-[; ;AbsLayer.c: 86: void ADC_CompleteConversionCallback(void){
+"148
+[; ;AbsLayer.c: 148: void ADC_CompleteConversionCallback(void){
 [v _ADC_CompleteConversionCallback `(v ~T0 @X0 1 ef ]
 {
 [e :U _ADC_CompleteConversionCallback ]
 [f ]
-"87
-[; ;AbsLayer.c: 87:     float percentage = 0;
+"149
+[; ;AbsLayer.c: 149:     float percentage = 0;
 [v _percentage `f ~T0 @X0 1 a ]
 [e = _percentage -> -> 0 `i `f ]
-"88
-[; ;AbsLayer.c: 88:     uint16_t with = 0;
+"150
+[; ;AbsLayer.c: 150:     uint16_t with = 0;
 [v _with `us ~T0 @X0 1 a ]
 [e = _with -> -> 0 `i `us ]
-"90
-[; ;AbsLayer.c: 90:     adc_value = ADC_ConversionResultGet();
+"152
+[; ;AbsLayer.c: 152:     adc_value = ADC_ConversionResultGet();
 [e = _adc_value ( _ADC_ConversionResultGet ..  ]
-"92
-[; ;AbsLayer.c: 92:     percentage =((float)adc_value * 99.0 / 4095.0);
+"154
+[; ;AbsLayer.c: 154:     percentage =((float)adc_value * 99.0 / 4095.0);
 [e = _percentage -> / * -> -> _adc_value `f `d .99.0 .4095.0 `f ]
-"93
-[; ;AbsLayer.c: 93:     DAC1_SetOutput((uint8_t)percentage);
+"155
+[; ;AbsLayer.c: 155:     DAC1_SetOutput((uint8_t)percentage);
 [e ( _DAC1_SetOutput (1 -> _percentage `uc ]
-"95
-[; ;AbsLayer.c: 95:     with = (uint16_t)((percentage/ 100.0) * 633.0);
+"157
+[; ;AbsLayer.c: 157:     with = (uint16_t)((percentage/ 100.0) * 633.0);
 [e = _with -> * / -> _percentage `d .100.0 .633.0 `us ]
-"97
-[; ;AbsLayer.c: 97:     PWM5_LoadDutyValue(with);
+"159
+[; ;AbsLayer.c: 159:     PWM5_LoadDutyValue(with);
 [e ( _PWM5_LoadDutyValue (1 _with ]
-"98
-[; ;AbsLayer.c: 98: }
-[e :UE 2214 ]
+"160
+[; ;AbsLayer.c: 160: }
+[e :UE 2233 ]
 }
-"100
-[; ;AbsLayer.c: 100: uint8_t Get_ButtonState(void){
-[v _Get_ButtonState `(uc ~T0 @X0 1 ef ]
+"162
+[; ;AbsLayer.c: 162: void putch(char c){
+[v _putch `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _Get_ButtonState ]
+[e :U _putch ]
+[v _c `uc ~T0 @X0 1 r1 ]
 [f ]
-"101
-[; ;AbsLayer.c: 101:     return abs_button;
-[e ) _abs_button ]
-[e $UE 2215  ]
-"102
-[; ;AbsLayer.c: 102: }
-[e :UE 2215 ]
+"163
+[; ;AbsLayer.c: 163:     UART1_Write(c);
+[e ( _UART1_Write (1 -> _c `uc ]
+"165
+[; ;AbsLayer.c: 165:     while (UART1_IsTxReady() != 1);
+[e $U 2235  ]
+[e :U 2236 ]
+[e :U 2235 ]
+[e $ != -> ( _UART1_IsTxReady ..  `i -> 1 `i 2236  ]
+[e :U 2237 ]
+"167
+[; ;AbsLayer.c: 167: }
+[e :UE 2234 ]
 }
+"172
+[; ;AbsLayer.c: 172: static uint8_t UART_SendBuffer(uint8_t *str_ptr){
+[v _UART_SendBuffer `(uc ~T0 @X0 1 sf1`*uc ]
+{
+[e :U _UART_SendBuffer ]
+[v _str_ptr `*uc ~T0 @X0 1 r1 ]
+[f ]
+"173
+[; ;AbsLayer.c: 173:     if(str_ptr == ((void*)0))
+[e $ ! == _str_ptr -> -> -> 0 `i `*v `*uc 2239  ]
+"174
+[; ;AbsLayer.c: 174:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 2238  ]
+[e :U 2239 ]
+"176
+[; ;AbsLayer.c: 176:     while (*str_ptr){
+[e $U 2240  ]
+[e :U 2241 ]
+{
+"177
+[; ;AbsLayer.c: 177:         while (UART1_IsTxDone() != 1);
+[e $U 2243  ]
+[e :U 2244 ]
+[e :U 2243 ]
+[e $ != -> ( _UART1_IsTxDone ..  `i -> 1 `i 2244  ]
+[e :U 2245 ]
+"178
+[; ;AbsLayer.c: 178:         UART1_Write(*str_ptr);
+[e ( _UART1_Write (1 *U _str_ptr ]
+"179
+[; ;AbsLayer.c: 179:         str_ptr++;
+[e ++ _str_ptr * -> -> 1 `i `x -> -> # *U _str_ptr `i `x ]
+"181
+[; ;AbsLayer.c: 181:     }
+}
+[e :U 2240 ]
+"176
+[; ;AbsLayer.c: 176:     while (*str_ptr){
+[e $ != -> *U _str_ptr `i -> 0 `i 2241  ]
+[e :U 2242 ]
+"183
+[; ;AbsLayer.c: 183:     return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 2238  ]
+"184
+[; ;AbsLayer.c: 184: }
+[e :UE 2238 ]
+}
+"186
+[; ;AbsLayer.c: 186: static void Led0_SetState(_Bool state){
+[v _Led0_SetState `(v ~T0 @X0 1 sf1`a ]
+{
+[e :U _Led0_SetState ]
+[v _state `a ~T0 @X0 1 r1 ]
+[f ]
+"187
+[; ;AbsLayer.c: 187:     if (state)
+[e $ ! != -> _state `i -> 0 `i 2247  ]
+"188
+[; ;AbsLayer.c: 188:         do { LATAbits.LATA4 = 1; } while(0);
+[e :U 2250 ]
+{
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 2249 ]
+[e $U 2251  ]
+"189
+[; ;AbsLayer.c: 189:     else
+[e :U 2247 ]
+"190
+[; ;AbsLayer.c: 190:         do { LATAbits.LATA4 = 0; } while(0);
+[e :U 2254 ]
+{
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 2253 ]
+[e :U 2251 ]
+"192
+[; ;AbsLayer.c: 192: }
+[e :UE 2246 ]
+}
+"193
+[; ;AbsLayer.c: 193: static void Led1_SetState(_Bool state){
+[v _Led1_SetState `(v ~T0 @X0 1 sf1`a ]
+{
+[e :U _Led1_SetState ]
+[v _state `a ~T0 @X0 1 r1 ]
+[f ]
+"194
+[; ;AbsLayer.c: 194:     if (state)
+[e $ ! != -> _state `i -> 0 `i 2256  ]
+"195
+[; ;AbsLayer.c: 195:         do { LATAbits.LATA5 = 1; } while(0);
+[e :U 2259 ]
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 2258 ]
+[e $U 2260  ]
+"196
+[; ;AbsLayer.c: 196:     else
+[e :U 2256 ]
+"197
+[; ;AbsLayer.c: 197:         do { LATAbits.LATA5 = 0; } while(0);
+[e :U 2263 ]
+{
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 2262 ]
+[e :U 2260 ]
+"199
+[; ;AbsLayer.c: 199: }
+[e :UE 2255 ]
+}
+"200
+[; ;AbsLayer.c: 200: static void Led2_SetState(_Bool state){
+[v _Led2_SetState `(v ~T0 @X0 1 sf1`a ]
+{
+[e :U _Led2_SetState ]
+[v _state `a ~T0 @X0 1 r1 ]
+[f ]
+"201
+[; ;AbsLayer.c: 201:     if (state)
+[e $ ! != -> _state `i -> 0 `i 2265  ]
+"202
+[; ;AbsLayer.c: 202:         do { LATAbits.LATA6 = 1; } while(0);
+[e :U 2268 ]
+{
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+}
+[e :U 2267 ]
+[e $U 2269  ]
+"203
+[; ;AbsLayer.c: 203:     else
+[e :U 2265 ]
+"204
+[; ;AbsLayer.c: 204:         do { LATAbits.LATA6 = 0; } while(0);
+[e :U 2272 ]
+{
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+}
+[e :U 2271 ]
+[e :U 2269 ]
+"206
+[; ;AbsLayer.c: 206: }
+[e :UE 2264 ]
+}
+"207
+[; ;AbsLayer.c: 207: static void Led3_SetState(_Bool state){
+[v _Led3_SetState `(v ~T0 @X0 1 sf1`a ]
+{
+[e :U _Led3_SetState ]
+[v _state `a ~T0 @X0 1 r1 ]
+[f ]
+"208
+[; ;AbsLayer.c: 208:     if (state)
+[e $ ! != -> _state `i -> 0 `i 2274  ]
+"209
+[; ;AbsLayer.c: 209:         do { LATAbits.LATA7 = 1; } while(0);
+[e :U 2277 ]
+{
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 2276 ]
+[e $U 2278  ]
+"210
+[; ;AbsLayer.c: 210:     else
+[e :U 2274 ]
+"211
+[; ;AbsLayer.c: 211:         do { LATAbits.LATA7 = 0; } while(0);
+[e :U 2281 ]
+{
+[e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 2280 ]
+[e :U 2278 ]
+"213
+[; ;AbsLayer.c: 213: }
+[e :UE 2273 ]
+}
+"215
+[; ;AbsLayer.c: 215: static _Bool SW1_ReadPin(void){
+[v _SW1_ReadPin `(a ~T0 @X0 1 sf ]
+{
+[e :U _SW1_ReadPin ]
+[f ]
+"216
+[; ;AbsLayer.c: 216:     if (PORTBbits.RB4 == 1)
+[e $ ! == -> . . _PORTBbits 0 4 `i -> 1 `i 2283  ]
+"217
+[; ;AbsLayer.c: 217:         return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 2282  ]
+[e :U 2283 ]
+"219
+[; ;AbsLayer.c: 219:     return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 2282  ]
+"221
+[; ;AbsLayer.c: 221: }
+[e :UE 2282 ]
+}
+"222
+[; ;AbsLayer.c: 222: static _Bool SW2_ReadPin(void){
+[v _SW2_ReadPin `(a ~T0 @X0 1 sf ]
+{
+[e :U _SW2_ReadPin ]
+[f ]
+"223
+[; ;AbsLayer.c: 223:     if (PORTCbits.RC5 == 1)
+[e $ ! == -> . . _PORTCbits 0 5 `i -> 1 `i 2285  ]
+"224
+[; ;AbsLayer.c: 224:         return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 2284  ]
+[e :U 2285 ]
+"226
+[; ;AbsLayer.c: 226:     return 1;
+[e ) -> -> 1 `i `a ]
+[e $UE 2284  ]
+"228
+[; ;AbsLayer.c: 228: }
+[e :UE 2284 ]
+}
+"230
+[; ;AbsLayer.c: 230: static void Led0_Toggle(void){
+[v _Led0_Toggle `(v ~T0 @X0 1 sf ]
+{
+[e :U _Led0_Toggle ]
+[f ]
+"231
+[; ;AbsLayer.c: 231:     do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0);
+[e :U 2289 ]
+{
+[e = . . _LATAbits 0 4 -> ~ -> . . _LATAbits 0 4 `i `uc ]
+}
+[e :U 2288 ]
+"233
+[; ;AbsLayer.c: 233: }
+[e :UE 2286 ]
+}
+[p f _printf 8388608 ]
+[p f _sprintf 8388736 ]
+[a 3C 80 114 101 115 115 32 83 87 49 32 84 111 32 73 110 99 114 101 97 115 101 32 84 111 103 103 108 101 32 70 114 101 113 10 13 0 ]
+[a 2C 80 111 108 108 105 110 103 32 109 111 100 101 32 115 101 110 100 32 119 105 116 104 32 112 114 105 110 116 102 10 13 0 ]
+[a 1C 80 114 101 115 115 32 66 117 116 116 111 110 32 83 87 50 44 32 65 112 112 108 105 99 97 116 105 111 110 32 105 110 32 72 97 108 116 32 109 111 100 101 10 13 0 ]
+[a 5C 77 83 66 32 37 100 32 76 83 66 32 37 100 10 13 0 ]
+[a 4C 67 104 97 110 103 101 32 116 104 101 32 114 101 115 105 115 116 97 110 99 101 32 116 111 32 99 104 97 110 103 101 32 116 104 101 32 98 116 105 103 104 116 110 101 115 115 32 111 102 32 76 69 68 95 68 51 10 13 0 ]

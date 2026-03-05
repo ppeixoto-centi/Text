@@ -11,11 +11,16 @@
 /* ************************************************************************************ */
 
 #include "AbsLayer.h"
+#include "Ui.h"
 #include "MCC_Generated_Files/system/pins.h"
 #include "MCC_Generated_Files/adc/adc.h"
 #include "MCC_Generated_Files/timer/tmr0.h"
 #include "mcc_generated_files/dac/dac1.h"
 #include "mcc_generated_files/pwm/pwm5.h"
+#include "mcc_generated_files/uart/uart1.h"
+#include "mcc_generated_files/spi/spi1.h"
+
+#include <stdio.h>
 
 /* ************************************************************************************ */
 /* * Defines                                                                          * */
@@ -24,6 +29,7 @@
 /* ************************************************************************************ */
 /* * Global Variables                                                                 * */
 /* ************************************************************************************ */
+const char str[] = "Button Pressed\r"; 
 
 adc_result_t adc_value = 0;
 
@@ -31,52 +37,108 @@ static uint8_t abs_button; //Stores the button state
 uint8_t period_elapsed = 0;
 
 /* ************************************************************************************ */
-/* * Macros                                                                           * */
-/* ************************************************************************************ */
-
-/* ************************************************************************************ */
 /* * Private Functions Prototypes                                                     * */
 /* ************************************************************************************ */
 
+static uint8_t UART_SendBuffer(uint8_t *);
+
+static void Led0_SetState(bool);
+static void Led1_SetState(bool);
+static void Led2_SetState(bool);
+static void Led3_SetState(bool);
+
+static void Led0_Toggle(void);
+
+static bool SW1_ReadPin(void);
+static bool SW2_ReadPin(void);
 
 /************************************************************************************* */
 /* * Public Functions                                                                 * */
 /* ************************************************************************************ */
 
 void Abs_LayerInit(void){ 
-    abs_button = BUTTON_UNPRESSED;
+    st_Ui_config config;
+    
+    //Connect the Ui API to the low level driver (led related)
+    config.Led0_Set = Led0_SetState;
+    config.Led1_Set = Led1_SetState;
+    config.Led2_Set = Led2_SetState;
+    config.Led3_Set = Led3_SetState;
+    
+    config.Led0_Toogle = Led0_Toggle;
+    
+    //Connect the Ui API to the low level driver (button related)
+    config.Sw1_GetPin = SW1_ReadPin;
+    config.Sw2_GetPin = SW2_ReadPin;
+            
+    //Initializes the Ui API
+    Ui_Initialize(config);
+    
+    //Registers all callback for the peripherals 
     SW1_SetInterruptHandler(ExtISR_Handler); //Registers the ISR callback
     TMR0_PeriodMatchCallbackRegister(TIM0_EllapsedTimeCallback); //Registers the ISR callback
-    
-    ADC_Initialize();
-    ADC_ChannelSelect(ADC_CHANNEL_ANA0);
-    
     ADC_ConversionDoneCallbackRegister(ADC_CompleteConversionCallback);
-    ADC_ConversionDoneInterruptEnable();
     
-    DAC1_Initialize();
-    PWM5_Initialize();
- 
-    while (SW2_GetValue() != 0); //Initial Polling to initial the main codeS
+    SPI1_Close();
+    CS_SetHigh();
+    
+    UART_SendBuffer("Press Button SW2, Application in Halt mode\n\r");
+    printf("Polling mode send with printf\n\r");
+    
+    TMR0_Start();
+
+    //Initial Polling to initial the main code
+    while (Ui_Sw2_GetButtonState() != true){
+        Ui_Sw2_ReadPin();
+        
+        if (period_elapsed == PERIOD_ELAPSED){
+            period_elapsed = NPERIOD_ELAPSED;
+            Ui_Led0_Toggle();
+        }
+    } 
+    
+    printf("Press SW1 To Increase Toggle Freq\n\r");
+    
+    //Activate PWM
+    PWM5CON |= (0X1) << 7;
+    
+    printf("Change the resistance to change the btightness of LED_D3\n\r");
+    
 }
 
 void Abs_Loop(void){
+    uint8_t buffer[2];
+    char out_buffer[20];
     if (period_elapsed == PERIOD_ELAPSED){ //Sets the time base for the toggle
         period_elapsed = NPERIOD_ELAPSED; //Clears the logged elapsed time
         
         LED_D2_Toggle();
     }
     
-    if (abs_button == BUTTON_PRESSED){ //Checks for button clicks 
-        abs_button = BUTTON_UNPRESSED;
+    if (Ui_Sw1_GetButtonState() == BUTTON_PRESSED){ //Checks for button clicks 
+        Ui_SW1_Clear();
+        UART_SendBuffer(str);
         Timer0_PeriodSet( (uint8_t)(Timer0_PeriodGet() / 2)); //Sets the time base for half 
+        
     }
     
     ADC_ConversionStart();
+    
+    SPI1_Open(HOST_CONFIG);
+    CS_SetLow();
+    SPI1_BufferWrite(buffer, 2); 
+    SPI1_BufferRead(buffer, 2); 
+    
+    sprintf(out_buffer, "MSB %d LSB %d\n\r", buffer[1], buffer[0]);
+    UART_SendBuffer(out_buffer);
+    
+    SPI1_Close();
+    
+    CS_SetHigh();
 }
 
 void ExtISR_Handler(void){
-    abs_button = SW1_GetValue();
+    Ui_ISR_SW1();
 }
 
 void TIM0_EllapsedTimeCallback(void){
@@ -97,10 +159,77 @@ void ADC_CompleteConversionCallback(void){
     PWM5_LoadDutyValue(with);
 }
 
-uint8_t Get_ButtonState(void){
-    return abs_button;
+void putch(char c){
+    UART1_Write(c);
+    
+    while (UART1_IsTxReady() != true);
+    
 }
-
 /* ************************************************************************************ */
 /* * Private Functions                                                                * */
 /* ************************************************************************************ */
+
+static uint8_t UART_SendBuffer(uint8_t *str_ptr){
+    if(str_ptr == NULL)
+        return 0;
+    
+    while (*str_ptr){
+        while (UART1_IsTxDone() != true);
+        UART1_Write(*str_ptr);
+        str_ptr++;
+        
+    }
+    
+    return 1;
+}
+
+static void Led0_SetState(bool state){
+    if (state)
+        LED_D2_SetHigh();
+    else
+        LED_D2_SetLow();
+    
+}
+static void Led1_SetState(bool state){
+    if (state)
+        LED_D3_SetHigh();
+    else
+        LED_D3_SetLow();
+    
+}
+static void Led2_SetState(bool state){
+    if (state)
+        LED_D4_SetHigh();
+    else
+        LED_D4_SetLow();
+    
+}
+static void Led3_SetState(bool state){
+    if (state)
+        LED_D5_SetHigh();
+    else
+        LED_D5_SetLow();
+    
+}
+
+static bool SW1_ReadPin(void){
+    if (SW1_GetValue() == 1)
+        return false;
+    
+    return true;
+    
+}
+static bool SW2_ReadPin(void){
+    if (SW2_GetValue () == 1)
+        return false;
+    
+    return true;
+    
+}
+
+static void Led0_Toggle(void){
+    LED_D2_Toggle();
+    
+}
+
+/* -- End of file -- */
