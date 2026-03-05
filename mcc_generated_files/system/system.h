@@ -41,7 +41,6 @@
 #include "config_bits.h"
 #include "../system/pins.h"
 #include "../dac/dac1.h"
-#include "../i2c_host/i2c1.h"
 #include "../pwm/pwm5.h"
 #include "../uart/uart1.h"
 #include "../system/interrupt.h"

@@ -14,12 +14,6 @@
         <logicalFolder name="dac" displayName="dac" projectFiles="true">
           <itemPath>mcc_generated_files/dac/dac1.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="i2c_host" displayName="i2c_host" projectFiles="true">
-          <itemPath>mcc_generated_files/i2c_host/i2c_host_event_types.h</itemPath>
-          <itemPath>mcc_generated_files/i2c_host/i2c1.h</itemPath>
-          <itemPath>mcc_generated_files/i2c_host/i2c_host_interface.h</itemPath>
-          <itemPath>mcc_generated_files/i2c_host/i2c_host_types.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
           <itemPath>mcc_generated_files/pwm/pwm5.h</itemPath>
         </logicalFolder>
@@ -74,11 +68,6 @@
             <itemPath>mcc_generated_files/dac/src/dac1.c</itemPath>
           </logicalFolder>
         </logicalFolder>
-        <logicalFolder name="i2c_host" displayName="i2c_host" projectFiles="true">
-          <logicalFolder name="src" displayName="src" projectFiles="true">
-            <itemPath>mcc_generated_files/i2c_host/src/i2c1.c</itemPath>
-          </logicalFolder>
-        </logicalFolder>
         <logicalFolder name="pwm" displayName="pwm" projectFiles="true">
           <logicalFolder name="src" displayName="src" projectFiles="true">
             <itemPath>mcc_generated_files/pwm/src/pwm5.c</itemPath>
@@ -110,7 +99,6 @@
           </logicalFolder>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>main.c</itemPath>
       <itemPath>AbsLayer.c</itemPath>
       <itemPath>Ui.c</itemPath>
     </logicalFolder>

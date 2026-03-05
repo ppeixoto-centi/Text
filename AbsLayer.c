@@ -16,19 +16,31 @@
 #include "MCC_Generated_Files/adc/adc.h"
 #include "MCC_Generated_Files/timer/tmr0.h"
 #include "mcc_generated_files/dac/dac1.h"
+#include "mcc_generated_files/i2c_host/i2c1.h"
 #include "mcc_generated_files/pwm/pwm5.h"
 #include "mcc_generated_files/uart/uart1.h"
 #include "mcc_generated_files/spi/spi1.h"
 
+#include <stdint.h>
 #include <stdio.h>
 
 /* ************************************************************************************ */
-/* * Defines                                                                          * */
+/* * Enum                                                                             * */
 /* ************************************************************************************ */
+
+typedef enum{
+    LR_Adress = (0x52 >> 1),
+    LR_ModelId_MS = 0x01, // Answer 0xEA
+    LR_ModelId_LS = 0x0F, 
+
+    LR_Module_Type_MS = 0x10, // Answer 0xAA
+    LR_Module_Type_LS = 0x10 
+} st_range_sensor;
 
 /* ************************************************************************************ */
 /* * Global Variables                                                                 * */
 /* ************************************************************************************ */
+
 const char str[] = "Button Pressed\r"; 
 
 adc_result_t adc_value = 0;
@@ -40,7 +52,7 @@ uint8_t period_elapsed = 0;
 /* * Private Functions Prototypes                                                     * */
 /* ************************************************************************************ */
 
-static uint8_t UART_SendBuffer(uint8_t *);
+static uint8_t UART_SendBuffer(char *);
 
 static void Led0_SetState(bool);
 static void Led1_SetState(bool);
@@ -108,11 +120,16 @@ void Abs_LayerInit(void){
 
 void Abs_Loop(void){
     uint8_t buffer[2];
+    uint8_t data[2];
+
+    st_range_sensor sensor_id[] = {LR_ModelId_MS, LR_ModelId_LS};
+
     char out_buffer[20];
     if (period_elapsed == PERIOD_ELAPSED){ //Sets the time base for the toggle
         period_elapsed = NPERIOD_ELAPSED; //Clears the logged elapsed time
         
         LED_D2_Toggle();
+
     }
     
     if (Ui_Sw1_GetButtonState() == BUTTON_PRESSED){ //Checks for button clicks 
@@ -134,6 +151,9 @@ void Abs_Loop(void){
     
     SPI1_Close();
     
+    I2C1_Write((uint16_t)(LR_Adress << 1), (uint8_t *)sensor_id, 2);
+    I2C1_Read( (uint16_t)(LR_Adress << 1),  data,  2);
+
     CS_SetHigh();
 }
 
@@ -169,7 +189,7 @@ void putch(char c){
 /* * Private Functions                                                                * */
 /* ************************************************************************************ */
 
-static uint8_t UART_SendBuffer(uint8_t *str_ptr){
+static uint8_t UART_SendBuffer(char *str_ptr){
     if(str_ptr == NULL)
         return 0;
     
