@@ -16,31 +16,55 @@
 #include "MCC_Generated_Files/adc/adc.h"
 #include "MCC_Generated_Files/timer/tmr0.h"
 #include "mcc_generated_files/dac/dac1.h"
+#include "mcc_generated_files/i2c_host/i2c1.h"
 #include "mcc_generated_files/pwm/pwm5.h"
 #include "mcc_generated_files/uart/uart1.h"
 #include "mcc_generated_files/spi/spi1.h"
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 
 /* ************************************************************************************ */
 /* * Defines                                                                          * */
 /* ************************************************************************************ */
 
+#define I2C_address            (0x52 >> 1)
+#define LR_ModelId_MS           0x01
+#define LR_ModelId_LS           0x0F
+#define LR_Module_Type_MS       0x10
+#define LR_Module_Type_LS       0x10
+
+/* ************************************************************************************ */
+/* * Struct                                                                           * */
+/* ************************************************************************************ */
+
+typedef struct {
+    uint16_t address;
+
+    uint8_t sensor_id[2];
+    uint8_t module_type[2];
+    
+    uint8_t data[2];
+} st_sensor;
+
 /* ************************************************************************************ */
 /* * Global Variables                                                                 * */
 /* ************************************************************************************ */
+
 const char str[] = "Button Pressed\r"; 
 
 adc_result_t adc_value = 0;
 
-static uint8_t abs_button; //Stores the button state
+
 uint8_t period_elapsed = 0;
+bool i2c_received = false;
 
 /* ************************************************************************************ */
 /* * Private Functions Prototypes                                                     * */
 /* ************************************************************************************ */
 
-static uint8_t UART_SendBuffer(uint8_t *);
+static uint8_t UART_SendBuffer(char *);
 
 static void Led0_SetState(bool);
 static void Led1_SetState(bool);
@@ -78,7 +102,8 @@ void Abs_LayerInit(void){
     SW1_SetInterruptHandler(ExtISR_Handler); //Registers the ISR callback
     TMR0_PeriodMatchCallbackRegister(TIM0_EllapsedTimeCallback); //Registers the ISR callback
     ADC_ConversionDoneCallbackRegister(ADC_CompleteConversionCallback);
-    
+    I2C1_CallbackRegister(I2C1_CompleteReceive);
+
     SPI1_Close();
     CS_SetHigh();
     
@@ -107,12 +132,22 @@ void Abs_LayerInit(void){
 }
 
 void Abs_Loop(void){
-    uint8_t buffer[2];
+    uint8_t buffer[1];
+
+    static st_sensor sensor = {
+        .address = I2C_address,
+        .sensor_id = {LR_ModelId_MS, LR_ModelId_LS},
+        .module_type = {LR_Module_Type_MS, LR_Module_Type_LS},
+        .data = {0, 0}
+
+    };
+
     char out_buffer[20];
     if (period_elapsed == PERIOD_ELAPSED){ //Sets the time base for the toggle
         period_elapsed = NPERIOD_ELAPSED; //Clears the logged elapsed time
         
         LED_D2_Toggle();
+
     }
     
     if (Ui_Sw1_GetButtonState() == BUTTON_PRESSED){ //Checks for button clicks 
@@ -124,7 +159,7 @@ void Abs_Loop(void){
     
     ADC_ConversionStart();
     
-    SPI1_Open(HOST_CONFIG);
+    /*SPI1_Open(HOST_CONFIG);
     CS_SetLow();
     SPI1_BufferWrite(buffer, 2); 
     SPI1_BufferRead(buffer, 2); 
@@ -132,8 +167,20 @@ void Abs_Loop(void){
     sprintf(out_buffer, "MSB %d LSB %d\n\r", buffer[1], buffer[0]);
     UART_SendBuffer(out_buffer);
     
-    SPI1_Close();
+    SPI1_Close();*/
     
+    i2c_received = false;
+
+    I2C1_WriteRead(0x0052,
+               sensor.sensor_id,
+               2,
+               buffer,
+               1);
+
+    while(!i2c_received);
+
+    printf("I2C slave responded with %u", sensor.data[0]);
+        
     CS_SetHigh();
 }
 
@@ -159,6 +206,10 @@ void ADC_CompleteConversionCallback(void){
     PWM5_LoadDutyValue(with);
 }
 
+void I2C1_CompleteReceive(void){
+    i2c_received = true;
+}
+
 void putch(char c){
     UART1_Write(c);
     
@@ -169,7 +220,7 @@ void putch(char c){
 /* * Private Functions                                                                * */
 /* ************************************************************************************ */
 
-static uint8_t UART_SendBuffer(uint8_t *str_ptr){
+static uint8_t UART_SendBuffer(char *str_ptr){
     if(str_ptr == NULL)
         return 0;
     

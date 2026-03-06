@@ -2,7 +2,7 @@
  * File:   Ui.h
  * Author: ppeixoto
  *
- * Created on 5 de Março de 2026, 13:46
+ * Created on 5 de MarÃ§o de 2026, 13:46
  */
 
 #ifndef UI_H
@@ -191,4 +191,3 @@ void Ui_SW1_Clear(void);
 #endif
 
 #endif	/* UI_H */
-
