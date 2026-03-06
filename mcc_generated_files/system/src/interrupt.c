@@ -92,6 +92,22 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         ADC_ThresholdISR();
     }
+    else if(PIE3bits.I2C1EIE == 1 && PIR3bits.I2C1EIF == 1)
+    {
+        I2C1_ERROR_ISR();
+    }
+    else if(PIE2bits.I2C1RXIE == 1 && PIR2bits.I2C1RXIF == 1)
+    {
+        I2C1_RX_ISR();
+    }
+    else if(PIE3bits.I2C1IE == 1 && PIR3bits.I2C1IF == 1)
+    {
+        I2C1_ISR();
+    }
+    else if(PIE3bits.I2C1TXIE == 1 && PIR3bits.I2C1TXIF == 1)
+    {
+        I2C1_TX_ISR();
+    }
     else if(PIE3bits.TMR0IE == 1 && PIR3bits.TMR0IF == 1)
     {
         TMR0_ISR();

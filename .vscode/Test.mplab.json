@@ -167,22 +167,101 @@
         {
             "name": "Project files",
             "files": [
-                "Makefile",
-                "main.c",
-                "AbsLayer.c",
-                "Ui.c",
-                "*.h",
-                "*.mc3",
-                "mcc_generated_files/adc/**/*",
-                "mcc_generated_files/dac/**/*",
-                "mcc_generated_files/i2c_host/**/*",
-                "mcc_generated_files/pwm/**/*",
-                "mcc_generated_files/spi/**/*",
-                "mcc_generated_files/system/**/*",
-                "mcc_generated_files/timer/**/*",
-                "mcc_generated_files/uart/**/*"
-            ],
-            "encoding": "ISO-8859-1"
+                {
+                    "include": "Makefile",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "main.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "AbsLayer.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "Ui.c",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "*.h",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "*.mc3",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/adc/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/dac/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/i2c_host/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/pwm/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/spi/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/system/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/timer/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                {
+                    "include": "mcc_generated_files/uart/**/*",
+                    "encoding": "ISO-8859-1"
+                },
+                "Text/AbsLayer.c",
+                "Text/AbsLayer.h",
+                "Text/U.c",
+                "Text/Ui.c",
+                "Text/Ui.h",
+                "Text/dist/default/debug/Test.X.debug.elf",
+                "Text/dist/default/production/Test.X.production.elf",
+                "Text/dist/default/production/Test.X.production.hex",
+                "Text/mcc_generated_files/adc/adc.h",
+                "Text/mcc_generated_files/adc/adc_types.h",
+                "Text/mcc_generated_files/adc/src/adc.c",
+                "Text/mcc_generated_files/dac/dac1.h",
+                "Text/mcc_generated_files/dac/src/dac1.c",
+                "Text/mcc_generated_files/pwm/pwm5.h",
+                "Text/mcc_generated_files/pwm/src/pwm5.c",
+                "Text/mcc_generated_files/spi/spi1.h",
+                "Text/mcc_generated_files/spi/spi_interface.h",
+                "Text/mcc_generated_files/spi/spi_polling_types.h",
+                "Text/mcc_generated_files/spi/src/spi1.c",
+                "Text/mcc_generated_files/system/clock.h",
+                "Text/mcc_generated_files/system/config_bits.h",
+                "Text/mcc_generated_files/system/interrupt.h",
+                "Text/mcc_generated_files/system/pins.h",
+                "Text/mcc_generated_files/system/src/clock.c",
+                "Text/mcc_generated_files/system/src/config_bits.c",
+                "Text/mcc_generated_files/system/src/interrupt.c",
+                "Text/mcc_generated_files/system/src/pins.c",
+                "Text/mcc_generated_files/system/src/system.c",
+                "Text/mcc_generated_files/system/system.h",
+                "Text/mcc_generated_files/timer/src/tmr0.c",
+                "Text/mcc_generated_files/timer/src/tmr2.c",
+                "Text/mcc_generated_files/timer/tmr0.h",
+                "Text/mcc_generated_files/timer/tmr0_deprecated.h",
+                "Text/mcc_generated_files/timer/tmr2.h",
+                "Text/mcc_generated_files/timer/tmr2_deprecated.h",
+                "Text/mcc_generated_files/uart/src/uart1.c",
+                "Text/mcc_generated_files/uart/uart1.h",
+                "Text/nbproject/Abs_Layer.c"
+            ]
         }
     ]
 }

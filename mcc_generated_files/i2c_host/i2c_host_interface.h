@@ -1,16 +1,15 @@
 /**
- * System Driver Header File
- * 
- * @file system.h
- * 
- * @defgroup systemdriver System Driver
- * 
- * @brief This is the generated header file for the System driver.
+ * I2C Driver Host API Interface File
  *
- * @version Driver Version 1.0.2
+ * @file i2c_host_interface.h
  *
- * @version Package Version 1.0.4
+ * @defgroup i2c_host I2C_HOST
+ *
+ * @brief This header file provides API prototypes for the I2C module host implementation in Polling and Interrupt mode.
+ *
+ * @version I2C Host Interface Version 3.0.0
 */
+
 /*
 © [2026] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,34 +31,32 @@
     THIS SOFTWARE.
 */
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
-
-#include <xc.h>
-#include <stdint.h>
+#ifndef I2C_HOST_INTERFACE_H
+#define I2C_HOST_INTERFACE_H
+/**
+  Section: Included Files
+*/
 #include <stdbool.h>
-#include "config_bits.h"
-#include "../system/pins.h"
-#include "../dac/dac1.h"
-#include "../i2c_host/i2c1.h"
-#include "../pwm/pwm5.h"
-#include "../uart/uart1.h"
-#include "../system/interrupt.h"
-#include "../system/clock.h"
-#include "../adc/adc.h"
-#include "../spi/spi1.h"
-#include "../timer/tmr0.h"
-#include "../timer/tmr2.h"
+#include <stdint.h>
+#include "i2c_host_types.h"
 
 /**
- * @ingroup systemdriver
- * @brief Initializes the system module. This is called only once before calling other APIs.
- * @param None.
- * @return None.
-*/
-void SYSTEM_Initialize(void);
+ * @ingroup i2c_host
+ * @struct i2c_host_interface_t 
+ * @brief I2C Host driver prototypes structure.
+ */
+typedef struct
+{   
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    bool (*Write)(uint16_t address, uint8_t *data, size_t dataLength);
+    bool (*Read)(uint16_t address, uint8_t *data, size_t dataLength);
+    bool (*WriteRead)(uint16_t address, uint8_t *writeData, size_t writeLength, uint8_t *readData, size_t readLength);
+    bool (*TransferSetup)(struct i2c_transfer_setup* setup, uint32_t srcClkFreq);
+    i2c_host_error_t (*ErrorGet)(void);
+    bool (*IsBusy)(void);
+    void (*CallbackRegister)(void (*callback)(void));
+    void (*Tasks)(void);
+}i2c_host_interface_t;
 
-#endif	/* SYSTEM_H */
-/**
- End of File
-*/
+#endif // end of I2C_HOST_INTERFACE_H

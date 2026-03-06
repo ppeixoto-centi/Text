@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "C:/Users/PC/Desktop/Centi/MicroChip/Challenge/Text/cmake/Test/default",
+    "cmake.sourceDirectory": "C:/Users/ppeixoto/OneDrive - CENTI/Ambiente de Trabalho/Centi/Microchip/Challenge/Text/cmake/Test/default",
     "mplab.clangd.arguments": [
         "--compile-commands-dir=${workspaceFolder}\\_build\\Test\\default"
     ],

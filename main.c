@@ -1,18 +1,19 @@
-/**
- * System Driver Header File
+ /*
+ * MAIN Generated Driver File
  * 
- * @file system.h
+ * @file main.c
  * 
- * @defgroup systemdriver System Driver
+ * @defgroup main MAIN
  * 
- * @brief This is the generated header file for the System driver.
+ * @brief This is the generated driver implementation file for the MAIN driver.
  *
- * @version Driver Version 1.0.2
+ * @version MAIN Driver Version 1.0.2
  *
- * @version Package Version 1.0.4
+ * @version Package Version: 3.1.2
 */
+
 /*
-© [2026] Microchip Technology Inc. and its subsidiaries.
+Â© [2026] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -31,35 +32,31 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
+#include "mcc_generated_files/system/system.h"
 
-#ifndef SYSTEM_H
-#define	SYSTEM_H
-
-#include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include "config_bits.h"
-#include "../system/pins.h"
-#include "../dac/dac1.h"
-#include "../i2c_host/i2c1.h"
-#include "../pwm/pwm5.h"
-#include "../uart/uart1.h"
-#include "../system/interrupt.h"
-#include "../system/clock.h"
-#include "../adc/adc.h"
-#include "../spi/spi1.h"
-#include "../timer/tmr0.h"
-#include "../timer/tmr2.h"
-
-/**
- * @ingroup systemdriver
- * @brief Initializes the system module. This is called only once before calling other APIs.
- * @param None.
- * @return None.
+/*
+    Main application
 */
-void SYSTEM_Initialize(void);
 
-#endif	/* SYSTEM_H */
-/**
- End of File
-*/
+#include "AbsLayer.h"
+
+int main(void)
+{
+    SYSTEM_Initialize();
+    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts 
+    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts 
+    // Use the following macros to: 
+
+    // Enable the Global Interrupts 
+    INTERRUPT_GlobalInterruptEnable(); 
+    // Disable the Global Interrupts 
+    //INTERRUPT_GlobalInterruptDisable(); 
+    Abs_LayerInit();
+ 
+    while(1)
+    {
+        Abs_Loop();
+    }  
+    
+    return 0;
+}

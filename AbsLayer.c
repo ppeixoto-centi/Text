@@ -21,21 +21,32 @@
 #include "mcc_generated_files/uart/uart1.h"
 #include "mcc_generated_files/spi/spi1.h"
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 
 /* ************************************************************************************ */
-/* * Enum                                                                             * */
+/* * Defines                                                                          * */
 /* ************************************************************************************ */
 
-typedef enum{
-    LR_Adress = (0x52 >> 1),
-    LR_ModelId_MS = 0x01, // Answer 0xEA
-    LR_ModelId_LS = 0x0F, 
+#define I2C_address            (0x52 >> 1)
+#define LR_ModelId_MS           0x01
+#define LR_ModelId_LS           0x0F
+#define LR_Module_Type_MS       0x01
+#define LR_Module_Type_LS       0x10
 
-    LR_Module_Type_MS = 0x10, // Answer 0xAA
-    LR_Module_Type_LS = 0x10 
-} st_range_sensor;
+/* ************************************************************************************ */
+/* * Struct                                                                           * */
+/* ************************************************************************************ */
+
+typedef struct {
+    uint16_t address;
+
+    uint8_t sensor_id[2];
+    uint8_t module_type[2];
+    
+    uint8_t data[2];
+} st_sensor;
 
 /* ************************************************************************************ */
 /* * Global Variables                                                                 * */
@@ -45,8 +56,9 @@ const char str[] = "Button Pressed\r";
 
 adc_result_t adc_value = 0;
 
-static uint8_t abs_button; //Stores the button state
+
 uint8_t period_elapsed = 0;
+bool i2c_received = false;
 
 /* ************************************************************************************ */
 /* * Private Functions Prototypes                                                     * */
@@ -90,7 +102,8 @@ void Abs_LayerInit(void){
     SW1_SetInterruptHandler(ExtISR_Handler); //Registers the ISR callback
     TMR0_PeriodMatchCallbackRegister(TIM0_EllapsedTimeCallback); //Registers the ISR callback
     ADC_ConversionDoneCallbackRegister(ADC_CompleteConversionCallback);
-    
+    I2C1_CallbackRegister(I2C1_CompleteReceive);
+
     SPI1_Close();
     CS_SetHigh();
     
@@ -119,10 +132,15 @@ void Abs_LayerInit(void){
 }
 
 void Abs_Loop(void){
-    uint8_t buffer[2];
-    uint8_t data[2];
+    uint8_t buffer[1];
 
-    st_range_sensor sensor_id[] = {LR_ModelId_MS, LR_ModelId_LS};
+    static st_sensor sensor = {
+        .address = I2C_address,
+        .sensor_id = {LR_ModelId_MS, LR_ModelId_LS},
+        .module_type = {LR_Module_Type_MS, LR_Module_Type_LS},
+        .data = {0, 0}
+
+    };
 
     char out_buffer[20];
     if (period_elapsed == PERIOD_ELAPSED){ //Sets the time base for the toggle
@@ -141,7 +159,7 @@ void Abs_Loop(void){
     
     ADC_ConversionStart();
     
-    SPI1_Open(HOST_CONFIG);
+    /*SPI1_Open(HOST_CONFIG);
     CS_SetLow();
     SPI1_BufferWrite(buffer, 2); 
     SPI1_BufferRead(buffer, 2); 
@@ -149,11 +167,17 @@ void Abs_Loop(void){
     sprintf(out_buffer, "MSB %d LSB %d\n\r", buffer[1], buffer[0]);
     UART_SendBuffer(out_buffer);
     
-    SPI1_Close();
+    SPI1_Close();*/
     
-    I2C1_Write((uint16_t)(LR_Adress << 1), (uint8_t *)sensor_id, 2);
-    I2C1_Read( (uint16_t)(LR_Adress << 1),  data,  2);
+    i2c_received = false;
 
+    I2C1_Host_WriteRead(sensor.address << 1, sensor.sensor_id, 2, buffer, 1);
+
+    while(!i2c_received);
+       i2c_received = false; 
+
+    printf("I2C slave responded with %u", *buffer);
+        
     CS_SetHigh();
 }
 
@@ -177,6 +201,10 @@ void ADC_CompleteConversionCallback(void){
     with = (uint16_t)((percentage/ 100.0) * 633.0);
     
     PWM5_LoadDutyValue(with);
+}
+
+void I2C1_CompleteReceive(void){
+    i2c_received = true;
 }
 
 void putch(char c){

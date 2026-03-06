@@ -39,6 +39,7 @@ void Abs_Loop(void);
 void ExtISR_Handler(void);
 void TIM0_EllapsedTimeCallback(void);
 void ADC_CompleteConversionCallback(void);
+void I2C1_CompleteReceive(void);
 uint8_t Get_ButtonState(void);  
 
 
@@ -47,4 +48,3 @@ uint8_t Get_ButtonState(void);
 #endif
 
 #endif	/* ABSLAYER_H */
-
